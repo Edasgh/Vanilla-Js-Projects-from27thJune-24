@@ -1,0 +1,38 @@
+*{
+    font-family: sans-serif;
+}
+
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    margin-top: 8rem;
+}
+
+
+form > label {
+    font-size: 1.11rem;
+    font-weight: 600;
+}
+form > input[type="text"]{
+    font-size: 1.11rem;
+    padding: .5rem .8rem;
+}
+
+#output{
+    font-size: 1.11rem;
+}
+
+#output > span{
+font-weight: 600;
+}
