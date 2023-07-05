@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess-the-number</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+ <!-- main heading -->
+ <h1>Guess The Number</h1>
+ <!-- the container of game description -->
+ <div class="container">
+
+     <h2 class="mainHeading">Guess a number between 1 to 100</h2>
+     <img src="./images/game.png" alt="game">
+     <h2 class="difficulty-guide">Choose Game Difficulty Level :</h2>
+     <button id="easy">Easy : 10 attempts</button>
+     <button id="hard">Hard : 5 attempts</button>
+    </div>
+
+    <!-- The game area -->
+    <div class="gameArea">
+        <h2 id="no-of-attempts">Easy : 10 attempts</h2>
+        
+        <!-- The game form -->
+        <form id="gameForm">
+            <label for="userGuess">Your guess :</label>
+            <input type="text"  id="userGuess" required>
+            <button type="submit">Enter</button>
+        </form>
+      <!-- The output div -->
+        <div class="output">
+
+            <p id="prevAttemptsHolder">Number of previous attempts</p>
+            <p id="prevAttempts">0</p>
+            
+            <p id="prevGuessesHolder">Previous guesses</p>
+            <p id="prevGuesses">0</p>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Js file -->
+   <script src="./index.js"></script>
+  </body>
+</html>
