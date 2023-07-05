@@ -20,7 +20,7 @@
 
   Live link : https://edasgh.github.io/guess-the-number-game/
 
-  # calculator:
+  # Calculator:
   Source code : https://github.com/Edasgh/Calculator
 
   Live link : https://edasgh.github.io/Calculator/
