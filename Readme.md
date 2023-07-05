@@ -30,6 +30,25 @@
 
   Live link: https://edasgh.github.io/TinDog-2021/
 
+________________________________________________________________________
+
+  [05-07-23]
+  ___________
+
+  # 4 projects including  (Practice projects shared by Hitesh sir's repo)
+
+  ## BMI Calculator 
+
+  ## Color-Scheme Changer 
+
+  ## Digital Clock [ui completed using Hitesh sir's template]
+
+  ## Guess the number
+
+  ## Keyboard Check 
+
+  doneee....
+
 
 ___________________________________________________________________________________________
 
