@@ -22,23 +22,25 @@
 
     <!-- The game area -->
     <div class="gameArea">
-        <h2 id="no-of-attempts">Easy : 10 attempts</h2>
-        
+        <h2 id="no-of-valid-attempts">&nbsp;</h2>
+         <p class="high-or-low">&nbsp; &nbsp;</p>
         <!-- The game form -->
         <form id="gameForm">
-            <label for="userGuess">Your guess :</label>
-            <input type="text"  id="userGuess" required>
-            <button type="submit">Enter</button>
+            <label for="userGuessVal">Your guess :</label>
+            <input type="text"  id="userGuessVal" required>
+            <button id="submitBtn" type="submit">Enter</button>
         </form>
       <!-- The output div -->
         <div class="output">
 
-            <p id="prevAttemptsHolder">Number of previous attempts</p>
+            <p id="prevAttemptsLabel">Number of previous attempts</p>
             <p id="prevAttempts">0</p>
             
-            <p id="prevGuessesHolder">Previous guesses</p>
+            <p id="prevGuessesLabel">Previous guesses</p>
             <p id="prevGuesses">0</p>
         </div>
+
+        <button id="newGame">Start New Game</button>
     </div>
 
 
