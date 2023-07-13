@@ -19,8 +19,10 @@ function startChangingColor() {
   function changeBgCol() {
     document.body.style.backgroundColor = generateRandomCol();
   }
+if(!intervalId){
 
   intervalId = setInterval(changeBgCol, 1000);
+}
 
   
 }
@@ -28,6 +30,8 @@ function startChangingColor() {
 // function to stop changing color
 function stopChangingColor() {
   clearInterval(intervalId);
+  //setting the intervalId to null | not overwriting the id
+  intervalId=null;
 }
 
 
