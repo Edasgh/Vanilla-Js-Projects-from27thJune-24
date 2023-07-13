@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML CANVAS</title>
+  </head>
+  <body>
+    <canvas id="myCanvas1"></canvas>
+    <canvas id="myCanvas2"></canvas>
+
+    <script>
+      const myCanvas1 = document.getElementById("myCanvas1");
+      const ctx1 = myCanvas1.getContext("2d");
+      //The fillStyle property sets the fill color of the drawing object:
+      ctx1.fillStyle = "red";
+      //   The fillRect() method draws a black rectangle with a top-left corner at position 20,20. The rectangle is 150 pixel wide and 100 pixels high.
+      ctx1.fillRect(20, 20, 150, 100);
+      // position 20,20 at top-left ; length=100px ; width=150px;
+
+      /*
+      _____________________________________
+
+        1. Begin a Path - beginPath()
+        2. Move to a Point - moveTo()
+        3. Draw in the Path - lineTo()
+        4. Draw the Path - stroke()
+     ____________________________________
+
+     */
+
+
+    const myCanvas2=document.getElementById("myCanvas2");
+    const ctx2=myCanvas2.getContext("2d");
+    ctx2.beginPath();
+    ctx2.moveTo(20, 20);
+    ctx2.lineTo(20, 100);
+    ctx2.lineTo(70, 100);
+    ctx2.stroke();
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
