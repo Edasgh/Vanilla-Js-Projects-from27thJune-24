@@ -1,296 +1,209 @@
+// getting all the products-section elements
+const homeMenu = document.querySelector("li> .home-menu"),
+  productsHeading = document.querySelector(".productsH"),
+  productsSection = document.querySelector(".products");
 
-/*
+// getting all the cart-section elements
+const cartMenu = document.querySelector("li > .cart-menu"),
+  cartSection = document.querySelector("#Cart"),
+  cartHeading = document.querySelector(".cartH"),
+  cartItemLength = document.querySelector(".itemLength");
 
-   // some basic things
-
-*/
-// products section elements
-const productsSection=document.querySelector(".products");
-const productsH=document.querySelector(".productsH");
-const homeMenu=document.querySelector(".home-menu");
-
-// cart section elements
-const cartSection=document.getElementById("Cart");
-const cartH = document.querySelector(".cartH");
-const cartMenu = document.querySelector(".cart-menu");
-
-
-// hide cart section onload
-document.body.onload=function(){
-    cartH.style.display="none"
- cartSection.style.display="none"
+  //function to show the products-section but hide the cart
+function hideCartAndShowProducts() {
+  cartHeading.style.display = "none";
+  cartSection.style.display = "none";
+  productsHeading.style.display = "flex";
+  productsSection.style.display = "flex";
 }
 
-// show cart section on clicking the cart menu on navbar
-cartMenu.onclick=function(){
-    productsH.style.display="none"
-    productsSection.style.display="none"
-    cartH.style.display="flex"
-    cartSection.style.display="flex"
+
+//function to hide the products-section but show the cart
+function showCartAndHideProducts() {
+  productsHeading.style.display = "none";
+  productsSection.style.display = "none";
+  cartHeading.style.display = "flex";
+  cartSection.style.display = "flex";
 }
 
-// show products section on clicking the home menu on navbar
-homeMenu.onclick=function(){
-    cartH.style.display="none"
-    cartSection.style.display="none"
-    productsH.style.display="flex"
-    productsSection.style.display="flex"
+//onloading of the page , only show the products section
+document.body.onload = hideCartAndShowProducts;
+
+//onclicking the cart menu show the cart but hide the products-section
+cartMenu.onclick = showCartAndHideProducts;
+
+//onclicking the home menu show the products-section but hide the cart
+homeMenu.onclick = hideCartAndShowProducts;
+
+
+// incrementing the item count per product on button click
+function increaseCount(id) {
+  let itemCountVal = Number(
+    document.querySelectorAll(".noOfItem")[id - 1].innerText
+  );
+  document.querySelectorAll(".noOfItem")[id - 1].innerText = itemCountVal + 1;
 }
 
-/*
+//Decrementing item count per product (not less than 1) on button click
+function decreaseCount(id) {
+  let itemCountVal = Number(
+    document.querySelectorAll(".noOfItem")[id - 1].innerText
+  );
+  if (itemCountVal > 1) {
+    document.querySelectorAll(".noOfItem")[id - 1].innerText = itemCountVal - 1;
+  }
+}
 
 
-// data of all products to show
 
 
-*/
 
-// const shopItemsData = [
-//     {
-//       id: 1,
-//       name: "Casual Shirt",
-//       price: 45,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.lorem20 means by itself even",
-//       img: "https://images.pexels.com/photos/899357/pexels-photo-899357.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id: 2,
-//       name: "Office Shirt",
-//       price: 100,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/297933/pexels-photo-297933.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id: 3,
-//       name: "T Shirt",
-//       price: 25,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/2356344/pexels-photo-2356344.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id: 4,
-//       name: "Mens Suit",
-//       price: 300,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/4894829/pexels-photo-4894829.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id: 5,
-//       name: "Womens Jewellery",
-//       price: 3900,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/15181110/pexels-photo-15181110/free-photo-of-woman-in-traditional-bridal-saree-dress.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id:6,
-//       name: "Womens Saree",
-//       price: 6000,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/10637779/pexels-photo-10637779.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id: 7,
-//       name: "Bag",
-//       price: 600,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id: 8,
-//       name: "Backpack",
-//       price: 300,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id:9,
-//       name: "Womens Ring",
-//       price: 20000,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/1232931/pexels-photo-1232931.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id: 10,
-//       name: "Womens Earrings",
-//       price: 4000,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/3266700/pexels-photo-3266700.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id: 11,
-//       name: "Smart Watches",
-//       price: 2000,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/437037/pexels-photo-437037.jpeg?auto=compress&cs=tinysrgb&w=600",
-//     },
-//     {
-//       id:12,
-//       name: "Earpods",
-//       price: 6000,
-//       desc: "Lorem ipsum dolor sit amet consectetur adipisicing.",
-//       img: "https://images.pexels.com/photos/16703772/pexels-photo-16703772/free-photo-of-close-up-of-wireless-earphones-and-case.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
-//     },
-//   ];
-
-const fetchProducts=async()=>{
+// fetch all the products
+const fetchProducts = async () => {
   try {
-      const response = await fetch('https://fakestoreapi.com/products');
-      const products= await response.json();
-      return products;
-
-
+    const response = await fetch("https://fakestoreapi.com/products");
+    const data = await response.json();
+    return data;
   } catch (error) {
-      console.log(error)
+    console.log(error);
   }
-}
+};
 
-const shopItemsData = await fetchProducts();
+//initiate the cartproducts set
+let initialCartState = new Set();
 
+// function of add-to-cart , remove-from-cart customisably as per actionType
+const cartSlice = (actionType, payload, cardItem) => {
+  // add-to-cart function
+  const addToCart = () => {
+    // add the requested product to cart if only the product doesn't already exist in cart
+    if (![...initialCartState].includes(payload)) {
+      initialCartState.add(payload);
+      //update and show the number of items in cart
+      cartItemLength.innerHTML = initialCartState.size;
+      //copy the passed div-element to add to the cartSection
+      let cartCard = cardItem.cloneNode(true);
+      //hide the addToCart button in cart and add onclick function to removeFromCart button
+      let twoButtons1 = cartCard.querySelector(".buttons1");
+      twoButtons1.querySelector(".addToCart").style.display = "none";
+      twoButtons1.querySelector(".removeFromCart").onclick = function () {
+        cartSlice("REMOVE FROM CART", payload, cartCard);
+      };
 
-
-
-
-
-
-
-
-
-
- // cart slice 
-
-
-
-
-
-  // initiate cart products count | only unique items will be added
-  const itemsInCart= new Set();
-  let basket= JSON.parse(localStorage.getItem("cartItems")) || []
-
-// length of cart items
-const cartitemLength=document.querySelector(".itemLength");
-
-// render products in cart section
-  const showCartProducts=(product,id)=>{
-    
-   
-
-    
-    itemsInCart.forEach((id)=>{
-      if(product.id===id){
-       
-
-      const cartCard = document.createElement("div");
-      cartCard.classList.add("card");
-      cartCard.innerHTML=`<div class="image"><img src=${product.img}  class="itemImg" alt=${product.name}></div>
-      <p class="title">${product.name}</p>
-      <p class="description">${product.desc}</p>
-      <p class="price">Price : <span class="itemPrice">${product.price}</span></p>
-      <div class="buttons1">
-      <button class="removeFromCart" >Remove From Cart (-) </button>
-  </div>
-      <div class="buttons2">
-          <button class="addItemNo" title="Increase Item No">+</button>
-          <span class="noOfItem">1</span>
-          <button class="decreaseItemNo" title="Decrease Item No">-</button>
-      </div>`
-
-      const removeFromCartBtn=cartCard.querySelector(".removeFromCart");
-
+      //onclick event for increaseCount and decreaseCount buttons for current item
+      let twoButtons2 = cartCard.querySelector(".buttons2");
       
+      //initiate the item count value
+      let itemCountValue;
+
+      twoButtons2.querySelector(".increaseCount").onclick=function increaseCount(){
+         //assigning the span-innertext to item count value and converting into a number
+       itemCountValue = Number(
+          cartCard.querySelector(".noOfItem").innerText
+        );
+        
+        cartCard.querySelector(".noOfItem").innerText = itemCountValue + 1;
+      }
+      twoButtons2.querySelector(".decreaseCount").onclick=function decreaseCount(){
+        //assigning the span-innertext to item count value and converting into a number
+       itemCountValue = Number(
+          cartCard.querySelector(".noOfItem").innerText
+        );
+     
+        if (itemCountValue > 1) {
+          cartCard.querySelector(".noOfItem").innerText = itemCountValue - 1;
+        }
+      }
+
+       // add the div-element in cartSection
       cartSection.appendChild(cartCard);
-      
-      removeFromCartBtn.addEventListener("click",()=>{
-        removeFromCart(product,(product.id));
-        cartSection.removeChild(cartCard);
-      })
-      //  localStorage.setItem("cartProducts",JSON.stringify([...itemsInCart]))
+      cardItem.querySelector(".noOfItem").innerText=1
+
+     
+    }else{
+      alert("Already added to cart!")
     }
-  })
-  
+  };
 
-}
-      
-       
-  
-
-  const addToCart=(product,id)=>{
-   
-
-      itemsInCart.add(id)
-      cartitemLength.innerHTML=itemsInCart.size;
-      console.log(itemsInCart);
+  // remove from cart function
+  const removeFromCart = () => {
+    // check if the item exists in the cart or not
+    if ([...initialCartState].includes(payload)) {
+      // remove the product from cart
+      initialCartState.delete(payload);
+      //update and show the number of items in cart
+      cartItemLength.innerHTML = initialCartState.size;
+      // select the cartCard to remove from cart
+      let cartCard = cartSection.querySelector(`#product-${payload.id}`);
+      cartSection.removeChild(cartCard);
      
-      showCartProducts(product,id)
+    } 
   
-      
-    
-     
+  };
+//customised as per the actionType
+  if (actionType === "ADD TO CART") {
+    addToCart();
+  } else {
+    removeFromCart();
   }
-  
-  const removeFromCart=(product,id)=>{
-      itemsInCart.forEach((id)=>{
-          if(product.id===id){
-
-            itemsInCart.delete(id)
-          }
-      })
-      cartitemLength.innerHTML=itemsInCart.size
-      console.log(itemsInCart);
-
-    
-      showCartProducts(product,id)
-
-   
-
-  }
+};
 
 
-  //function on how to show data 
- 
-  const getAllProducts=()=>{
-  
-    shopItemsData.forEach((product)=>{
-     
-        const productCard=document.createElement("div");
-        productCard.classList.add("card");
-        productCard.innerHTML=`<div class="image"><img src=${product.img}  class="itemImg" alt=${product.name}></div>
-        <p class="title">${product.name}</p>
-        <p class="description">${product.desc}</p>
-        <p class="price">Price : <span class="itemPrice">${product.price}</span></p>
-        <div class="buttons1">
-            <button class="addToCart" >Add to Cart (+) </button> &nbsp;
-        </div>
-        <div class="buttons2">
-            <button class="addItemNo" title="Increase Item No">+</button>
-            <span class="noOfItem">1</span>
-            <button class="decreaseItemNo" title="Decrease Item No">-</button>
-        </div>`
-       
-        const addToCartBtn=productCard.querySelector(".addToCart");
-        addToCartBtn.addEventListener("click",()=>{
-          addToCart(product,(product.id));
-          basket.push(product);
-           localStorage.setItem("cartItems",JSON.stringify(basket));
-
-          if(itemsInCart.size===0){
-            addToCartBtn.setAttribute("disabled","false")
-          }else{
-            addToCartBtn.setAttribute("disabled","true");
-
-          }
-        })
-      
-        
-        
-        
-        productsSection.appendChild(productCard)
-        
-       
-
-    })
-
-  }
-
-  getAllProducts();
 
 
+
+// show all the products in products-section
+const showAllProducts = async () => {
+  //getting all products
+  const products = await fetchProducts();
+
+  // create a html-div element with the mentioned innerHTML per product
+  products.forEach((product) => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+    // assigning id to each product to keep track of it
+    card.id = `product-${product.id}`;
+    card.innerHTML = `<div class="image"><img src=${
+      product.image
+    } class="itemImg" alt="${product.title}"></div>
+   <p class="title">${product.title}</p>
+   <p class="category">Category : <span class="itemCategory">${
+     product.category
+   }</span></p>
+   <p class="description">${product.description.slice(0, 100)}</p>
+   <p class="price">Price : <span class="itemPrice">${product.price}</span></p>
+   <p class="rating">Rating : <span class="itemRating">${product.rating.rate}(${
+      product.rating.count
+    })</span></p>
+   <div class="buttons1">
+       <button class="addToCart" >Add to Cart (+) </button> &nbsp;
+       <button class="removeFromCart">Remove From Cart (-) </button>
+   </div>
+   <div class="buttons2">
+   <button class="increaseCount" onclick="increaseCount(${
+     product.id
+   })" title="Increase the no. of item(s)" >+</button> &nbsp;
+   no. of item(s) : <span class="noOfItem">1</span>
+   <button class="decreaseCount" onclick="decreaseCount(${
+     product.id
+   })" title="Decrease the no. of item(s)" >-</button>
+   </div>`;
+
+   // add to cart action on button click
+    const addToCartBtn = card.querySelector(".addToCart");
+    addToCartBtn.onclick = function () {
+      cartSlice("ADD TO CART", product, card);
+    };
+
+    // remmove from cart action on button click
+    const removeFromCartBtn = card.querySelector(".removeFromCart");
+    removeFromCartBtn.onclick = function removeFromCart() {
+      cartSlice("REMOVE FROM CART", product, card);
+    };
+//adding the div to the produts section
+    productsSection.appendChild(card);
+  });
+};
+
+//show all products in products-section
+showAllProducts();
