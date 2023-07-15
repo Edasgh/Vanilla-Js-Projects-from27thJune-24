@@ -9,14 +9,13 @@ const cartMenu = document.querySelector("li > .cart-menu"),
   cartHeading = document.querySelector(".cartH"),
   cartItemLength = document.querySelector(".itemLength");
 
-  //function to show the products-section but hide the cart
+//function to show the products-section but hide the cart
 function hideCartAndShowProducts() {
   cartHeading.style.display = "none";
   cartSection.style.display = "none";
   productsHeading.style.display = "flex";
   productsSection.style.display = "flex";
 }
-
 
 //function to hide the products-section but show the cart
 function showCartAndHideProducts() {
@@ -35,28 +34,23 @@ cartMenu.onclick = showCartAndHideProducts;
 //onclicking the home menu show the products-section but hide the cart
 homeMenu.onclick = hideCartAndShowProducts;
 
-
 // incrementing the item count per product on button click
 function increaseCount(id) {
   let itemCountVal = Number(
-    document.querySelectorAll(".noOfItem")[id - 1].innerText
+    document.querySelector(`.noOfItem-${id}`).innerText
   );
-  document.querySelectorAll(".noOfItem")[id - 1].innerText = itemCountVal + 1;
+  document.querySelector(`.noOfItem-${id}`).innerText = itemCountVal + 1;
 }
 
 //Decrementing item count per product (not less than 1) on button click
 function decreaseCount(id) {
   let itemCountVal = Number(
-    document.querySelectorAll(".noOfItem")[id - 1].innerText
+    document.querySelector(`.noOfItem-${id}`).innerText
   );
   if (itemCountVal > 1) {
-    document.querySelectorAll(".noOfItem")[id - 1].innerText = itemCountVal - 1;
+    document.querySelector(`.noOfItem-${id}`).innerText = itemCountVal - 1;
   }
 }
-
-
-
-
 
 // fetch all the products
 const fetchProducts = async () => {
@@ -92,36 +86,29 @@ const cartSlice = (actionType, payload, cardItem) => {
 
       //onclick event for increaseCount and decreaseCount buttons for current item
       let twoButtons2 = cartCard.querySelector(".buttons2");
-      
-      //initiate the item count value
-      let itemCountValue;
 
-      twoButtons2.querySelector(".increaseCount").onclick=function increaseCount(){
-         //assigning the span-innertext to item count value and converting into a number
-       itemCountValue = Number(
-          cartCard.querySelector(".noOfItem").innerText
+      twoButtons2.querySelector(".increaseCount").onclick = function () {
+        let itemCountVal = Number(
+          cartCard.querySelector(`.noOfItem-${payload.id}`).innerText
         );
-        
-        cartCard.querySelector(".noOfItem").innerText = itemCountValue + 1;
-      }
-      twoButtons2.querySelector(".decreaseCount").onclick=function decreaseCount(){
-        //assigning the span-innertext to item count value and converting into a number
-       itemCountValue = Number(
-          cartCard.querySelector(".noOfItem").innerText
+        cartCard.querySelector(`.noOfItem-${payload.id}`).innerText =
+          itemCountVal + 1;
+      };
+      twoButtons2.querySelector(".decreaseCount").onclick = function () {
+        let itemCountVal = Number(
+          cartCard.querySelector(`.noOfItem-${payload.id}`).innerText
         );
-     
-        if (itemCountValue > 1) {
-          cartCard.querySelector(".noOfItem").innerText = itemCountValue - 1;
-        }
-      }
+        cartCard.querySelector(`.noOfItem-${payload.id}`).innerText =
+          itemCountVal - 1;
+      };
 
-       // add the div-element in cartSection
+      // add the div-element in cartSection
       cartSection.appendChild(cartCard);
-      cardItem.querySelector(".noOfItem").innerText=1
-
-     
-    }else{
-      alert("Already added to cart!")
+      //reset the item count value to 1 after adding the item to cart
+      cardItem.querySelector(`.noOfItem-${payload.id}`).innerText = 1;
+      alert("Added to cart successfully!")
+    } else {
+      alert("Already added to cart!");
     }
   };
 
@@ -136,21 +123,15 @@ const cartSlice = (actionType, payload, cardItem) => {
       // select the cartCard to remove from cart
       let cartCard = cartSection.querySelector(`#product-${payload.id}`);
       cartSection.removeChild(cartCard);
-     
-    } 
-  
+    }
   };
-//customised as per the actionType
+  //customised as per the actionType
   if (actionType === "ADD TO CART") {
     addToCart();
   } else {
     removeFromCart();
   }
 };
-
-
-
-
 
 // show all the products in products-section
 const showAllProducts = async () => {
@@ -183,13 +164,13 @@ const showAllProducts = async () => {
    <button class="increaseCount" onclick="increaseCount(${
      product.id
    })" title="Increase the no. of item(s)" >+</button> &nbsp;
-   no. of item(s) : <span class="noOfItem">1</span>
+   no. of item(s) : <span class="noOfItem  noOfItem-${product.id}">1</span>
    <button class="decreaseCount" onclick="decreaseCount(${
      product.id
    })" title="Decrease the no. of item(s)" >-</button>
    </div>`;
 
-   // add to cart action on button click
+    // add to cart action on button click
     const addToCartBtn = card.querySelector(".addToCart");
     addToCartBtn.onclick = function () {
       cartSlice("ADD TO CART", product, card);
@@ -200,7 +181,7 @@ const showAllProducts = async () => {
     removeFromCartBtn.onclick = function removeFromCart() {
       cartSlice("REMOVE FROM CART", product, card);
     };
-//adding the div to the produts section
+    //adding the div to the produts section
     productsSection.appendChild(card);
   });
 };
