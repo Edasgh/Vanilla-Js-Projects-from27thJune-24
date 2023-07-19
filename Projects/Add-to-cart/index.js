@@ -106,7 +106,8 @@ const cartSlice = (actionType, payload, cardItem) => {
       cartSection.appendChild(cartCard);
       //reset the item count value to 1 after adding the item to cart
       cardItem.querySelector(`.noOfItem-${payload.id}`).innerText = 1;
-      alert("Added to cart successfully!")
+      // alert("Added to cart successfully!")
+      // console.log(cartCard)
     } else {
       alert("Already added to cart!");
     }
@@ -147,15 +148,15 @@ const showAllProducts = async () => {
     card.innerHTML = `<div class="image"><img src=${
       product.image
     } class="itemImg" alt="${product.title}"></div>
-   <p class="title">${product.title}</p>
+   <p class="title">${product.title.slice(0,30)}...</p>
    <p class="category">Category : <span class="itemCategory">${
      product.category
    }</span></p>
-   <p class="description">${product.description.slice(0, 100)}</p>
+   <!-- <p class="description">${product.description.slice(0, 50)}...</p>-->
    <p class="price">Price : <span class="itemPrice">${product.price}</span></p>
-   <p class="rating">Rating : <span class="itemRating">${product.rating.rate}(${
+   <!-- <p class="rating">Rating : <span class="itemRating">${product.rating.rate}(${
       product.rating.count
-    })</span></p>
+    })</span></p>-->
    <div class="buttons1">
        <button class="addToCart" >Add to Cart (+) </button> &nbsp;
        <button class="removeFromCart">Remove From Cart (-) </button>

@@ -72,8 +72,8 @@ h1 {
 /* Styling every product card */
 .card {
 
-  width: 410px;
-  height: 800px;
+  width:335px;
+  height:450px;
   padding: 0.7rem 1.5rem;
   border: 1px solid black;
   border-radius: .6rem;
@@ -87,8 +87,8 @@ h1 {
   align-items: center;
 }
 .card > .image {
-  width: 300px;
-  height: 290px;
+  width: 168px;
+  height:170px;
   margin-bottom: .8rem;
 
   text-align: center;
@@ -100,7 +100,7 @@ h1 {
 }
 
 .card > .title {
-  font-size: 2rem;
+  font-size: 1.3rem;
   font-weight: 550;
   text-align: center;
 }
@@ -108,7 +108,7 @@ h1 {
 .card > .category,
 .card > .price,
 .card > .rating {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 550;
 
 }
@@ -130,7 +130,7 @@ h1 {
 
 
 .card > .buttons1 > button{
-font-size: 1rem;
+font-size: .9rem;
 font-weight: 550;
 padding: .5rem .7rem;
 border: none;
