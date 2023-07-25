@@ -1,0 +1,92 @@
+* {
+  font-family: sans-serif;
+}
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  color: #484886;
+  font-size: 1.4rem;
+  background-color: white;
+  border: 1px solid #1bd1e1;
+  outline: none;
+}
+
+
+main {
+  height: calc(500px - 80px);
+  width: calc(500px - 18px);
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  padding: 2rem;
+  width: 1800px;
+  height: 450px;
+  transition: all 1s ease;
+}
+
+.review-card {
+  position: relative;
+  width: 450px;
+  height: 350px;
+  object-fit: cover;
+  border: 1px solid #78edf7;
+  border-radius: 0.6rem;
+  padding: 1.1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-card > .chat-1 {
+  position: absolute;
+  top: 20px;
+  right: 149px;
+  font-size: 2.11rem;
+  color: #125b70;
+}
+.review-card > .chat-2 {
+  position: absolute;
+  top: 106px;
+  right: 149px;
+  font-size: 2.11rem;
+  color: #484886;
+}
+
+.review-card > .name,
+.review-card > .profession {
+  line-height: 0;
+}
+
+.review-card > .name {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+.review-card > .profession {
+  font-size: 1rem;
+  font-weight: 550;
+  color: #5dcdad;
+}
+
+.review-card > .img {
+  width: 100px;
+  height: 100px;
+  border: 10px solid #5fd3f5;
+  border-radius: 50%;
+  object-fit: cover;
+}
