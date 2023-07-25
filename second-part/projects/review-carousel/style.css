@@ -1,8 +1,9 @@
+/* Giving sans-serif font to every element */
 * {
   font-family: sans-serif;
 }
 
-
+/* Styling the body */
 body {
   display: flex;
   flex-direction: column;
@@ -10,6 +11,7 @@ body {
   align-items: center;
 }
 
+/* Styling all the buttons */
 button {
   cursor: pointer;
   color: #484886;
@@ -19,7 +21,7 @@ button {
   outline: none;
 }
 
-
+/* Styling the main tag */
 main {
   height: calc(500px - 80px);
   width: calc(500px - 18px);
@@ -28,6 +30,7 @@ main {
   transform-style: preserve-3d;
 }
 
+/* Styling the review-cards-container */
 .reviews {
   display: flex;
   flex-direction: row;
@@ -38,6 +41,8 @@ main {
   transition: all 1s ease;
 }
 
+
+/* Styling all the review cards */
 .review-card {
   position: relative;
   width: 450px;
@@ -53,6 +58,8 @@ main {
   align-items: center;
 }
 
+
+/* Styling the comment icon in card */
 .review-card > .chat-1 {
   position: absolute;
   top: 20px;
@@ -60,13 +67,7 @@ main {
   font-size: 2.11rem;
   color: #125b70;
 }
-.review-card > .chat-2 {
-  position: absolute;
-  top: 106px;
-  right: 149px;
-  font-size: 2.11rem;
-  color: #484886;
-}
+
 
 .review-card > .name,
 .review-card > .profession {
@@ -83,6 +84,7 @@ main {
   color: #5dcdad;
 }
 
+/* Styling the review-card image */
 .review-card > .img {
   width: 100px;
   height: 100px;
