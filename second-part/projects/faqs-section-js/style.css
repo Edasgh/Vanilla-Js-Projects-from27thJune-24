@@ -30,7 +30,7 @@ main>.qa{
     border: none;
     border-radius: .6rem;
 
-    background-color: rgb(226, 233, 243);
+    background-color:#efebff;
 }
 
 /* Styling the question part */
@@ -47,11 +47,11 @@ main>.qa>.ques{
 main>.qa>.ques>i{
     font-size: 1.8rem;
     cursor: pointer;
-    transition: all .3s ease-in;
+    transition: all .4s ease-in;
 }
 
 main>.qa>.ques>i:hover{
-   transform: rotate(90deg);
+   transform: rotate(180deg);
 }
 
 /* Styling the answer part */
