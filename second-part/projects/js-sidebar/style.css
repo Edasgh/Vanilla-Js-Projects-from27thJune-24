@@ -1,5 +1,12 @@
+/* Some default styles */
 *{
     font-family: sans-serif;
+}
+
+a{
+    text-decoration: none;
+    font-size: inherit;
+    color: inherit;
 }
 
 body{
@@ -7,4 +14,118 @@ body{
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
+
+    background-color: #e8def6;
+
+    overflow: hidden;
+}
+
+/* Styling the sidebar */
+.sidebar{
+    display: flex;
+    flex-direction: row;
+
+    width: 300px;
+    height: 100vh;
+    background-color: #ffff;
+   border-right: 1px solid #5d6f96;
+    padding: 0.4rem 1.2rem;
+    margin-left: -.5rem;
+    margin-top: -.5rem;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+ 
+    transition: all 0.45s ease-in;
+}
+
+/* The hide class */
+.hide{
+    transform: translateX(-347px);
+}
+/* Stying the navbar , nav-heading , lists and menu and cross icons */
+
+.navbar>.nav-h1{
+    font-size: 2.3rem;
+    color: #0c2a6b;
+}
+
+.navbar>.nav-h1>span{
+   color:#2d9597;
+}
+
+
+.navbar>ul{
+    display: flex;
+    flex-direction: column;
+
+    justify-content:flex-start;
+    align-items:flex-start;
+
+    margin-left: -2rem;
+}
+
+.navbar>ul>div{
+    height: 2.3rem;
+    width: 17rem;
+    padding-top: 1rem;
+
+    text-align: start;
+
+    cursor: pointer;
+    transition: all .8s ease-in;
+}
+
+.navbar>ul>div:hover{
+    background-color: #38afb1;
+    color: #fff;
+
+ 
+}
+
+.navbar>ul>div>a{
+  margin-left: 1rem;
+  font-size: 1.4rem;
+}
+
+
+.menu-bar,.cross-icon{
+    font-size: 2rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #0c2a6b;
+    transition: all .2s ease;
+}
+
+.menu-bar{
+    margin: .4rem .7rem 0 0;
+    animation: bounce 2s ease-in-out infinite forwards;
+}
+
+/* Configuring the bounce animation of menu-bar */
+
+@keyframes bounce {
+    0% {
+      transform: scale(1);
+    
+    }
+    50% {
+      transform: scale(1.5);
+    
+
+    }
+    100% {
+      transform: scale(1);
+    
+    }
+  }
+
+
+.menu-bar:hover,.cross-icon:hover{
+    color:#2d9597;
+}
+
+.cross-icon:hover{
+    transform: rotate(360deg);
 }
