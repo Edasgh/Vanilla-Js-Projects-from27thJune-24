@@ -74,7 +74,7 @@ body{
     text-align: start;
 
     cursor: pointer;
-    transition: all .8s ease-in;
+    transition: all .6s ease-in;
 }
 
 .navbar>ul>div:hover{
