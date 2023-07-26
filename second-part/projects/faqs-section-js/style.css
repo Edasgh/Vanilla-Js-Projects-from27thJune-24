@@ -1,0 +1,66 @@
+/* Adding all default styles */
+*{
+    font-family: sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling the main section */
+main{
+    width: 550px;
+    height: fit-content;
+    margin-top: 3rem;
+     
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    
+    
+}
+
+/* Styling all the question-answer div */
+main>.qa{
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: .6rem;
+
+    background-color: rgb(226, 233, 243);
+}
+
+/* Styling the question part */
+main>.qa>.ques{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 1.3rem;
+    letter-spacing: 2.5px;
+}
+
+main>.qa>.ques>i{
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+main>.qa>.ques>i:hover{
+   transform: rotate(90deg);
+}
+
+/* Styling the answer part */
+main>.qa>.ans{
+    font-size: 1.1rem;
+    letter-spacing: 1.5px;
+}
+
+/* The hide class */
+.hide{
+    display: none;
+}
