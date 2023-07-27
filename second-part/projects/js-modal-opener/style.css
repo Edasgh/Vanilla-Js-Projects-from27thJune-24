@@ -1,0 +1,111 @@
+/* Adding some default styles */
+* {
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.5s ease-in;
+}
+
+/* Styling all the buttons */
+button,
+input[type="text"] {
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  outline: none;
+
+  font-size: 1.1rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+/* Styling the container div */
+.container {
+  margin-top: 3rem;
+
+  width: 316px;
+  height: 154px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  transition: all 0.5s ease-in;
+}
+
+.container > p {
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.container > button {
+  background-color: #39373e;
+  color: #fff;
+}
+
+/* Styling the modal div */
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: #f4e8ff;
+
+  width: 500px;
+  height: 250px;
+  padding: 1rem 1.5rem;
+  border: 1px solid #020225;
+  border-radius: 0.6rem;
+
+  transform: translateY(-150px);
+  transition: all 0.5s ease-in;
+}
+
+.modal > .header-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal > .header-part > .cross-icon {
+  cursor: pointer;
+
+  font-size: 1.5rem;
+}
+
+.modal > .header-part > .cross-icon:hover {
+  color: #730606;
+  transform: scale(1.5);
+  transition: transform 0.5s ease;
+}
+
+.modal > form {
+  margin-top: 1.2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal > form > label,
+.modal > form > input[type="text"] {
+  font-size: 1.05rem;
+}
+
+.modal > form > button {
+  background-color: #008000;
+  color: #fff;
+}
+
+/* the hide class */
+.hide {
+  display: none;
+}

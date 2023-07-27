@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Modal Opener</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css" />
+    <!-- Fontawesome link -->
+    <script
+      src="https://kit.fontawesome.com/a508d8e351.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- The container div -->
+    <div class="container">
+      <button class="open-modal" id="open-modal">Change Text</button>
+      <br />
+      <p class="text">Click on Add Text to Change Text</p>
+      
+    </div>
+    <!-- The modal div -->
+    <div class="modal hide">
+      <!-- Header part -->
+      <div class="header-part">
+        <h2>Change Text</h2>
+        <i class="fa-solid fa-xmark cross-icon"></i>
+      </div>
+      <!-- Middle part -->
+      <form class="middle-part">
+        <label for="input">Write Here Something</label>
+        <input type="text" id="input" placeholder="Write something..." />
+        <button type="submit" id="submit">Add Text</button>
+      </form>
+    </div>
+    <!-- JS file -->
+    <script src="./index.js"></script>
+  </body>
+</html>
