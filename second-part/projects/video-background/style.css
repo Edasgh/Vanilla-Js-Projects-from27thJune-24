@@ -6,12 +6,51 @@
 }
 
 body{
+    position: relative;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    overflow-y: hidden;
 }
 
-video{
-    width: 95vw;
-    height: 100vh;
+
+.video-container{
+   
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    z-index: -2;
+
+   
+}
+
+.switch-btn{
+    position: absolute;
+margin:3rem 1rem 5rem 2rem;
+left:2rem;
+bottom:7rem;
+
+font-size: 1.1rem;
+background-color: beige;
+padding: .6rem 1.4rem;
+border:none;
+border-radius: .6rem;
+cursor: pointer;
+}
+
+
+.switch-btn>.switch{
+    position: absolute;
+    top:0;
+    width:4.5rem;
+    left:4.3rem;
+    height: 2.5rem;
+    background-color: blueviolet;
+
+    border-radius: .6rem;
+   
+    transition: all .4s ease-in;
+   transform:translateX(-5rem);
+
 }
