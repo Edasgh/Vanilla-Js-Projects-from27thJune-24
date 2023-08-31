@@ -44,6 +44,26 @@ ________________________________________________________________________
 
   ## Keyboard Check 
 
+  # Image Editor
+
+  # Color Changer
+
+  # Add-to-Cart
+
+  # Js modal opener
+  
+  # faq-section-js
+  
+  # js-sidebar
+  
+  # tabs with different contents
+
+  # review-carousel
+
+  # video-background
+
+  # countdown-timer
+
   doneee....
 
 
