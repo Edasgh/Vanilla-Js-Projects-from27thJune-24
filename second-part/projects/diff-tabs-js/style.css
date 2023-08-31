@@ -1,3 +1,5 @@
+/* Applying some default styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +10,14 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #d8d4ff;
+  background-color: #eae8ff;
 }
 
 li {
   list-style: none;
 }
 
+/* Styling the nav-bar */
 nav {
   display: flex;
   flex-direction: row;
@@ -36,30 +39,32 @@ nav > li {
 
 }
 
-
+/* Styling the menus in the navbar */
 .home-tab-menu {
   background-color: #6ba9ef;
 }
 .home-tab-menu:hover{
-  background-color: #3189ee;
+  background-color: #7fbbff;
   text-shadow: 2px 1.5px #efe4e4;
 }
 
 .about-tab-menu {
-  background-color: #b6e95f;
+  background-color: #3E4756;
+  color: #ffffff;
 }
 .about-tab-menu:hover{
-  background-color:#8ebe3d;
-  text-shadow: 2px 1.5px #efe4e4;
+  background-color:#63676d;
+  text-shadow: 2px 1.5px #5d5b5b;
 }
 .contact-tab-menu {
-  background-color: #eb8eeb;
+  background-color: #A2ACBD;
 }
 .contact-tab-menu:hover{
-  background-color: #cf7ccf;
+  background-color: #c1c7d1;
   text-shadow: 2px 1.5px #efe4e4;
 }
 
+/* Styling each tab-section */
 .tab-section {
   height: 100vh;
   width: 93vw;
@@ -75,8 +80,9 @@ nav > li {
   background-color: #6ba9ef;
 }
 .about-tab {
-  background-color: #b6e95f;
+  background-color: #3E4756;
+  color: #ffffff;
 }
 .contact-tab {
-  background-color: #eb8eeb;
+  background-color: #A2ACBD;
 }
