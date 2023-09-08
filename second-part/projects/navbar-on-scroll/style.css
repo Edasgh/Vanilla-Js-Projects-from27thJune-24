@@ -1,0 +1,193 @@
+/* Importing the Akronim and Poppins font */
+@import url("https://fonts.googleapis.com/css2?family=Akronim&family=Poppins&display=swap");
+
+/* Adding some default styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x:hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  font-family: "Akronim", cursive;
+  text-transform: uppercase;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem;
+}
+
+.navbar > .top-bar> .logo {
+  font-size: 2.5rem;
+  text-shadow: 0px 0px 5px #3c3d3d;
+}
+
+.navbar > ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: start;
+  align-items: start;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.navbar > ul > li:hover {
+  color: #000000;
+  
+}
+.menu-bar, .menu-bar::before{
+  display: none;
+}
+
+
+.fixed-nav{
+position: fixed;
+top:0;
+left:0;
+width:98%;
+background:#ffff;
+box-shadow: 2px 2px 5px #0000;
+
+color: #000;
+}
+
+
+.fixed-nav > ul > li:hover {
+  color: #13b1b1;
+  
+}
+
+
+#home {
+  height: 100vh;
+  background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
+    url("./images/pic4.jpg") center/cover no-repeat;
+
+  color: #ffff;
+}
+
+.header-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+
+  width: 50rem;
+  height: 40rem;
+  margin: auto;
+  
+}
+
+#home > .header-section > .logo {
+  font-size: 5rem;
+  letter-spacing: 3px;
+}
+
+#home > .header-section > p {
+  width: 40rem;
+  text-align: center;
+}
+
+#home > .header-section > button {
+  background: none;
+  backdrop-filter: blur(-10px);
+
+  padding: 0.5rem 1rem;
+  border: 2px solid #ffff;
+
+  color: #ffff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+
+  transform: all 0.8s ease-in;
+}
+
+#home > .header-section > button:hover {
+  background-color: #ffff;
+
+  color: #13b1b1;
+}
+
+section {
+  height: 70vh;
+
+  text-align: center;
+
+  padding: 2rem 0.7rem;
+}
+
+.section-darker {
+  background-color: #f1f5f8;
+}
+
+.heading {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2.3rem;
+}
+
+.heading-dark {
+  color: #102a42;
+}
+
+.heading-light {
+  color: #13b1b1;
+}
+
+section > .descr {
+  width: 85%;
+  margin: auto;
+}
+
+
+.back-to-top{
+  position: fixed;
+  bottom: 37px;
+  right: 21px;
+
+  padding: 1.2rem;
+ 
+  background-color: #017d7d;
+  border: none;
+  border-radius: .5rem;
+  outline: none;
+
+
+  font-size: 1.1rem;
+  color: #fff;
+
+  cursor: pointer;
+}
+
+footer {
+  background-color: #102a42;
+  color: #ffff;
+
+  padding: 3rem 1rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
