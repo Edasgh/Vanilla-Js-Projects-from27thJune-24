@@ -1,3 +1,4 @@
+//defining all the months
 const months = [
   "January",
   "February",
@@ -13,6 +14,7 @@ const months = [
   "December",
 ];
 
+//defining all the weekdays
 const weekdays = [
   "Sunday",
   "Monday",
@@ -23,15 +25,17 @@ const weekdays = [
   "Saturday",
 ];
 
-
+//getting the giveaway remaining time text, deadline time container, expired giveaway text
 const giveawayTimeInfo=document.querySelector(".time");
 const deadline=document.querySelector(".deadline");
 
 const expiredGiveawayText=document.querySelector(".expired");
 
+//getting the giveaway date
 const giveawayDate=new Date(2023,10,25,20,30,0);
 // new Date(year,month,date,hours,mins,secs)
 
+// getting the weekday, date, month, year, hours, minutes and if the time is in am or pm
 const weekday=weekdays[giveawayDate.getDay()];
 const date=giveawayDate.getDate();
 const month=months[giveawayDate.getMonth()];
@@ -40,9 +44,11 @@ const hours=giveawayDate.getHours()>12?giveawayDate.getHours()-12:giveawayDate.g
 const minutes=giveawayDate.getMinutes();
 const amOrpm=giveawayDate.getHours()>12?"pm":"am";
 
+//showing the giveaway time info
 giveawayTimeInfo.textContent=`Giveaway Ends On ${weekday} , ${date} ${month} ${year} at ${hours}:${minutes}${amOrpm}`
 
 
+//function to get the remaining time
 function getRemainingTime(){
 
 const currentDate=new Date();
@@ -84,4 +90,5 @@ expiredGiveawayText.classList.remove("hidden")
 
 }
 
+//getting the time every 1 second
 let countDown=setInterval(getRemainingTime,1000);

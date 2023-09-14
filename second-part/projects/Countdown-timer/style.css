@@ -1,9 +1,19 @@
+/* Importing the poppins font */
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
+/* Adding some default styles */
 * {
+  margin: 0;
+  padding: 0;
   font-family: "Poppins", sans-serif;
 }
 
+body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Styling the container */
 .container {
   width: 80vw;
   margin: 2.5rem auto auto auto;
@@ -21,6 +31,7 @@
   object-fit: cover;
 }
 
+/* Styling the information div */
 .info {
   width: 40%;
 }
@@ -34,6 +45,8 @@ h2 {
   color: #1a6aa2;
 }
 
+
+
 .time {
   font-size: 1.1rem;
   letter-spacing: 3px;
@@ -44,6 +57,7 @@ h2 {
   color: #4e4d4d;
 }
 
+/* Styling the giveaway time counter container */
 .counter-container {
   display: flex;
   flex-direction: row;
@@ -77,7 +91,7 @@ h2 {
    
 }
 
-
+/* Styling the text to be shown if the giveaway expires */
 .expired{
   font-size: 1.4rem;
   text-align: center;
