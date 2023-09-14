@@ -49,6 +49,32 @@ ________________________________________________________________________
 
   doneee....
 
+  [14-09-23]
+
+  # Other Projects
+
+  ## Countdown-timer
+
+  ## different-tabs-content
+
+  ## faqs-with-toggle-show-or-hide-answers
+
+  ## modal-opener-with-js
+
+  ## js-sidebar
+
+  ## paragraph-generator (lorem-ipsum-generator)
+
+  ## navbar-on-scroll
+
+  ## parallax-effect-with-css (parallax-effect)
+
+  ## parallax-scrlling-effect
+
+  ## review-carousel
+
+  ## video-background
+
 
 ___________________________________________________________________________________________
 
