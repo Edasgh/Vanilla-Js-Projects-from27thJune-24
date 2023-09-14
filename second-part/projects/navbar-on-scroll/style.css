@@ -23,11 +23,13 @@ a {
   color: inherit;
 }
 
+/* Styling the logo */
 .logo {
   font-family: "Akronim", cursive;
   text-transform: uppercase;
 }
 
+/* Styling the navigation bar */
 .navbar {
   display: flex;
   flex-direction: row;
@@ -57,9 +59,7 @@ a {
   color: #000000;
   
 }
-.menu-bar, .menu-bar::before{
-  display: none;
-}
+
 
 
 .fixed-nav{
@@ -79,7 +79,7 @@ color: #000;
   
 }
 
-
+/* Stuyling the home-part */
 #home {
   height: 100vh;
   background: linear-gradient(rgba(63, 208, 212, 0.5), rgba(0, 0, 0, 0.7)),
@@ -132,6 +132,7 @@ color: #000;
   color: #13b1b1;
 }
 
+/* Styling all the sections */
 section {
   height: 70vh;
 
@@ -140,10 +141,12 @@ section {
   padding: 2rem 0.7rem;
 }
 
+/* Styling darker sections */
 .section-darker {
   background-color: #f1f5f8;
 }
 
+/* Styling the headings of each section */
 .heading {
   font-size: 3rem;
   font-weight: 600;
@@ -163,7 +166,7 @@ section > .descr {
   margin: auto;
 }
 
-
+/* Styling the back-to-top button */
 .back-to-top{
   position: fixed;
   bottom: 37px;
@@ -183,6 +186,7 @@ section > .descr {
   cursor: pointer;
 }
 
+/* Styling the footer */
 footer {
   background-color: #102a42;
   color: #ffff;
