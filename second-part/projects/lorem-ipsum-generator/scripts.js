@@ -1,4 +1,4 @@
-//given paragraphs array
+//given paragraphs array || 9 paragraphs in this array
 const paragraphs = [
   `Jelly sweet roll jelly beans biscuit pie macaroon chocolate donut. Carrot cake caramels pie sweet apple pie tiramisu carrot cake. Marzipan marshmallow croissant tootsie roll lollipop. Cupcake lemon drops bear claw gummies. Jelly bear claw gummi bears lollipop cotton candy gummi bears chocolate bar cake cookie. Cupcake muffin danish muffin cookie gummies. Jelly beans tiramisu pudding. Toffee soufflé chocolate cake pastry brownie. Oat cake halvah sweet roll cotton candy croissant lollipop. Macaroon tiramisu chocolate bar candy candy carrot cake jelly sweet. Gummies croissant macaroon dessert. Chocolate cake dragée pie.`,
   `Next level tbh everyday carry, blog copper mug forage kitsch roof party pickled hammock kale chips tofu. Etsy shoreditch 8-bit microdosing, XOXO viral butcher banh mi humblebrag listicle woke bicycle rights brunch before they sold out ramps. Twee shabby chic taiyaki flannel, enamel pin venmo vape four loko. Hexagon kale chips typewriter kitsch 8-bit organic plaid small batch keffiyeh ethical banh mi narwhal echo park cronut.`,
@@ -19,24 +19,31 @@ const paragraphNoInput = document.getElementById("para-no");
 
 const paragraphsContainer = document.querySelector(".paragraphs-container");
 
-//setting the default no of pages to be generated
+//setting the default no of paragraphs to be generated
 let defaultNo = 5;
 paragraphNoInput.value = defaultNo;
+
+//default paragraphs array to copy
+let defaultParagraphs;
 
 // shuffling the paragraph array to generate paragraphs in a random order
 const shuffle = (array) => {
   // create a copy of the array so that the original array is not mutated
   const newArray = [...array];
   for (let i = newArray.length - 1; i > 0; i--) {
+    // we don't write i>=0, cause when i will be 0, j will always be 0
+  //for (let i = newArray.length - 1; i >= 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+    console.log("i :",i);
+    console.log("j : ",j);
   }
   return newArray;
 };
 
 // function to generate the paragraphs
 const generateParagraphs = (value) => {
-  //converting the no of pages string value to number
+  //converting the "no of paragraphs" string value to number
   const num = parseFloat(value);
   //if user writes any number like 0, or less than 0, don't generate paragraphs
   if (num <= 0) {
@@ -56,6 +63,8 @@ const generateParagraphs = (value) => {
       }
       //show all the elements in document
       paragraphsContainer.innerHTML = generatedResult.join("<br/><br/><br/>");
+         //return the paragraphs
+    defaultParagraphs=generatedResult.join("\n\n");
     } else {
       // if the input isn't greater than the length of the array
 
@@ -64,12 +73,24 @@ const generateParagraphs = (value) => {
       let generatedResult = arr.slice(0, num);
       //show all the elements in document
       paragraphsContainer.innerHTML = generatedResult.join("<br/><br/><br/>");
+      //return the paragraphs
+      defaultParagraphs= generatedResult.join("\n\n");
     }
   }
 };
 
-//on submitting the form don't reload page and generate paragraphs as per user input
-formField.addEventListener("submit", (e) => {
-  e.preventDefault();
+//on clicking the generate button don't reload page and generate paragraphs as per user input
+const generateTextBtn=formField.querySelector(".generate-text");
+
+generateTextBtn.onclick=function(){
   generateParagraphs(paragraphNoInput.value);
-});
+}
+
+// on clicking the copy paragraphs button, copy all the generated paragraphs
+const copyBtn=formField.querySelector(".copy-pgs");
+
+copyBtn.onclick=function(){
+  window.navigator.clipboard.writeText(defaultParagraphs);
+  alert("Paragraphs copied!")
+}
+

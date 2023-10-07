@@ -34,7 +34,7 @@ h1 {
 }
 
 input[type="number"],
-.generate-text {
+.generate-text, .copy-pgs{
   padding: 0.4rem 0.8rem;
   border: 1px solid #808080;
   border-radius: 0.5rem;
@@ -43,6 +43,14 @@ input[type="number"],
 
 .generate-text {
   background-color: #020255;
+  color: #ffff;
+
+  cursor: pointer;
+}
+
+
+.copy-pgs {
+  background-color: #f42be6;
   color: #ffff;
 
   cursor: pointer;
