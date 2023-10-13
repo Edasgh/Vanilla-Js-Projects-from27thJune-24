@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors Game</title>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+ <!-- main header of the game -->
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <!-- The scoreboard respective to the user and the computers score -->
+    <div class="score-board">
+        <div class="badge" id="user-label">you</div>
+        <div class="badge" id="comp-label">comp</div>
+        <div class="score">
+            <span class="user-score" title="user-score">00</span>
+            <span>:</span>
+            <span class="comp-score" title="computer-score">00</span>
+        </div>
+    </div>
+<!-- The result text -->
+    <h2 class="result result_h2">Paper covers rock.You win!</h2>
+
+    <!-- Choices buttons -->
+    <div class="choices">
+        <div class="choice rock" title="rock">
+           <button class="rock-emoji choice-button" id="rock">
+            &#128074;
+           </button>
+        </div>
+        <div class="choice paper" title="paper">
+           <button class="paper-emoji choice-button" id="paper">
+            &#9995;
+           </button>
+        </div>
+        <div class="choice scissor" title="scissor" >
+           <button class="scissor-emoji choice-button" id="scissor">
+            &#9996;
+           </button>
+        </div>
+    </div>
+<!-- The action message -->
+    <p class="action-msg">
+        Make your move
+    </p>
+
+
+    <!-- Js File -->
+    <script src="./scripts.js"></script>
+
+</body>
+</html>

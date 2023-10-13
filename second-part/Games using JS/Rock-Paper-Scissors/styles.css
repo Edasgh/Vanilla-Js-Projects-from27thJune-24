@@ -1,0 +1,100 @@
+/* Adding some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-color: #25272e;
+  color: #f2f2fc;
+
+  text-align: center;
+}
+
+/* Styling the header */
+header {
+  padding: 1rem;
+  background-color: #f2f2fc;
+  color: #25272e;
+}
+
+header h1 {
+  text-align: center;
+}
+
+/* Styling the score-board */
+.score-board {
+  display: inline-block;
+  position: relative;
+}
+
+.score {
+  margin: 1.5rem;
+
+  display: inline-block;
+
+  padding: 2rem;
+  font-size: 3.5rem;
+
+  border: 1.5px solid #f2f2fc;
+  border-radius: 0.5rem;
+}
+
+.badge {
+  display: inline-block;
+  position: absolute;
+  top: 12px;
+
+  padding: 0.4rem;
+  border: none;
+  border-radius: 0.35rem;
+
+  background-color: red;
+}
+
+#user-label {
+  margin-left: 4.2rem;
+}
+
+#comp-label {
+  margin-left: 10.7rem;
+}
+
+/* Styling the choices div and buttons */
+.choices {
+  margin: 3rem 0 4.5rem 0;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.choice {
+  display: inline-block;
+
+
+  padding: 1rem;
+  border: 5px solid #f2f2fc;
+  border-radius: 50%;
+
+}
+.choice > button{
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+#rock,
+#paper,
+#scissor {
+  font-size: 6.5rem;
+}
