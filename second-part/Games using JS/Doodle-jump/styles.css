@@ -1,0 +1,13 @@
+.grid{
+    width: 600px;
+    height: 400px;
+    background-color: wheat;
+    position: relative;
+}
+
+.doodler{
+    width: 60px;
+    height: 85px;
+    background-color: blue;
+    position: absolute;
+}
