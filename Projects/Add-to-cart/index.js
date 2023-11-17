@@ -106,8 +106,6 @@ const cartSlice = (actionType, payload, cardItem) => {
       cartSection.appendChild(cartCard);
       //reset the item count value to 1 after adding the item to cart
       cardItem.querySelector(`.noOfItem-${payload.id}`).innerText = 1;
-      // alert("Added to cart successfully!")
-      // console.log(cartCard)
     } else {
       alert("Already added to cart!");
     }
@@ -124,6 +122,9 @@ const cartSlice = (actionType, payload, cardItem) => {
       // select the cartCard to remove from cart
       let cartCard = cartSection.querySelector(`#product-${payload.id}`);
       cartSection.removeChild(cartCard);
+    } else {
+      alert("This product dosen't even exist in cart!");
+      return;
     }
   };
   //customised as per the actionType
@@ -148,15 +149,15 @@ const showAllProducts = async () => {
     card.innerHTML = `<div class="image"><img src=${
       product.image
     } class="itemImg" alt="${product.title}"></div>
-   <p class="title">${product.title.slice(0,30)}...</p>
+   <p class="title">${product.title.slice(0, 40)}...</p>
    <p class="category">Category : <span class="itemCategory">${
      product.category
    }</span></p>
    <!-- <p class="description">${product.description.slice(0, 50)}...</p>-->
    <p class="price">Price : <span class="itemPrice">${product.price}</span></p>
-   <!-- <p class="rating">Rating : <span class="itemRating">${product.rating.rate}(${
-      product.rating.count
-    })</span></p>-->
+   <!-- <p class="rating">Rating : <span class="itemRating">${
+     product.rating.rate
+   }(${product.rating.count})</span></p>-->
    <div class="buttons1">
        <button class="addToCart" >Add to Cart (+) </button> &nbsp;
        <button class="removeFromCart">Remove From Cart (-) </button>
@@ -165,7 +166,9 @@ const showAllProducts = async () => {
    <button class="increaseCount" onclick="increaseCount(${
      product.id
    })" title="Increase the no. of item(s)" >+</button> &nbsp;
-   no. of item(s) : <span class="noOfItem  noOfItem-${product.id}">1</span>
+   <span>no. of item(s) : <span class="noOfItem  noOfItem-${
+     product.id
+   }">1</span></span>
    <button class="decreaseCount" onclick="decreaseCount(${
      product.id
    })" title="Decrease the no. of item(s)" >-</button>
