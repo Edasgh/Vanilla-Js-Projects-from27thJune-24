@@ -1,79 +1,71 @@
-## All vanilla js projects outside this repo listed here  
+## All vanilla js projects outside this repo listed here
+
 [All repos are public]
- 
 
- # Drum-Kit :
-  Source code : https://github.com/Edasgh/Drum-Kit
+# Drum-Kit :
 
-  Live Link : https://edasgh.github.io/Drum-Kit/
+Source code : https://github.com/Edasgh/Drum-Kit
 
-  # Roll-the-dice-game : 
-  Source code : https://github.com/Edasgh/Roll-the-dice
+Live Link : https://edasgh.github.io/Drum-Kit/
 
-  Live link :  https://edasgh.github.io/Roll-the-dice/
+# Roll-the-dice-game :
 
-  # Guess-the-number-game : 
-  Source code :https://github.com/Edasgh/guess-the-number-game
+Source code : https://github.com/Edasgh/Roll-the-dice
 
-  Live link : https://edasgh.github.io/guess-the-number-game/
+Live link : https://edasgh.github.io/Roll-the-dice/
 
-  # Calculator:
-  Source code : https://github.com/Edasgh/Calculator
+# Guess-the-number-game :
 
-  Live link : https://edasgh.github.io/Calculator/
+Source code :https://github.com/Edasgh/guess-the-number-game
 
-  # Tindog-2021 (with Tailwind): 
-  Source code: https://github.com/Edasgh/TinDog-2021-source-code
+Live link : https://edasgh.github.io/guess-the-number-game/
 
-  Live link: https://edasgh.github.io/TinDog-2021/
+# Calculator:
 
-________________________________________________________________________
+Source code : https://github.com/Edasgh/Calculator
 
-  [05-07-23]
- 
+Live link : https://edasgh.github.io/Calculator/
 
-  # 4 projects including  (Practice projects shared by Hitesh sir's repo)
+# Tindog-2021 (with Tailwind):
 
-  ## BMI Calculator 
+Source code: https://github.com/Edasgh/TinDog-2021-source-code
 
-  ## Color-Scheme Changer 
+Live link: https://edasgh.github.io/TinDog-2021/
 
-  ## Digital Clock [ui completed using Hitesh sir's template]
+---
 
-  ## Guess the number
+[05-07-23]
 
-  ## Keyboard Check 
+# 4 projects including (Practice projects shared by Hitesh sir's repo)
 
-  # Image Editor
+## BMI Calculator
 
-  # Color Changer
+## Color-Scheme Changer
 
-  # Add-to-Cart
+## Digital Clock [ui completed using Hitesh sir's template]
 
-  # Js modal opener
-  
-  # faq-section-js
-  
-  # js-sidebar
-  
-  # tabs with different contents
+## Keyboard Check
 
-  # review-carousel
+# Image Editor
 
-  # video-background
+# Color Changer
 
-  # countdown-timer
+# Add-to-Cart
 
-  doneee....
+# Js modal opener
 
+# faq-section-js
 
-___________________________________________________________________________________________
+# js-sidebar
 
+# tabs with different contents
 
+# review-carousel
 
+# video-background
 
+# countdown-timer
 
+doneee....
 
-
-  
-
+---

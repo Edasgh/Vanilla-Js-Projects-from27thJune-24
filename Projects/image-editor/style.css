@@ -1,4 +1,4 @@
-*{
+* {
   font-family: sans-serif;
 }
 
@@ -34,35 +34,27 @@ button {
 
 .right {
   grid-area: right;
-  /* background-color: hsl(265, 100%, 86%);
-  border-left: 1px solid hsl(265, 100%, 56%); */
+
   display: flex;
   flex-direction: column;
   gap: 10px;
   justify-content: flex-end;
   align-items: stretch;
 }
-/*  
-.right>button{
-    background-color: hsl(265, 100%, 86%);
-    border-left: none;
-    border-right: none;
-    outline: none;
-} */
 
 .bottom {
   grid-area: bottom;
 }
 
-.bottom >.filter-infos> .slider {
+.bottom > .filter-infos > .slider {
   width: 80%;
 }
-.bottom>.filter-infos{
+.bottom > .filter-infos {
   display: flex;
   flex-direction: row;
   gap: 10px;
 }
-span{
+span {
   font-size: 1.1rem;
 }
 .bottom > .buttons {
