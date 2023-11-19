@@ -22,6 +22,7 @@ a {
   color: inherit;
 }
 
+/* Styling for the minimum screen-width : 320px */
 @media screen and (min-width: 320px) {
   /* Styling the navbar */
   .navbar {
@@ -167,13 +168,13 @@ a {
   }
 
   .card > .buttons1 > .addToCart {
-    background-color: #047254;
+    background-color: #5a895a;
 
     color: #ffff;
   }
 
   .card > .buttons1 > .removeFromCart {
-    background-color: #d7e1e7;
+    background-color: #f7e5fb;
   }
 
   .card > .buttons2 > .noOfItem {
@@ -183,11 +184,15 @@ a {
   }
 }
 
+/* Styling for the minimum screen-width : 425px */
+
 @media screen and (min-width: 425px) {
+  /* Styling the navbar */
   .navbar {
     flex-direction: row;
     gap: 30px;
   }
+  /* Styling the card */
   .card > .image {
     width: 168px;
     height: 170px;
@@ -205,11 +210,15 @@ a {
   }
 }
 
+/* Styling for the minimum screen-width : 500px */
+
 @media screen and (min-width: 500px) {
+  /* Styling the navbar */
   .navbar > ul {
     font-size: 1.1rem;
   }
 
+  /* Styling the card */
   .card {
     width: 340px;
     height: 450px;
@@ -234,148 +243,3 @@ a {
     font-weight: 550;
   }
 }
-
-/*
-
- Styling the navbar
-  .navbar {
-    position: sticky;
-    top: 0px;
-    z-index: 2;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 1.8rem;
-
-    background-color: #e2c0ff;
-  }
-
-  .navbar > ul {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    font-size: 1.1rem;
-    font-weight: 550;
-  }
-
-  .navbar > ul > li > a:hover {
-    text-decoration: underline;
-  }
-
-  h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin: 5.5rem;
-  }
-
-  Styling the main section
-  .products,
-  #Cart {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 70px;
-    flex-wrap: wrap;
-
-    margin: 8rem 2rem;
-  }
-
-  Styling every product card
-  .card {
-    width: 335px;
-    height: 450px;
-    padding: 0.7rem 1.5rem;
-    border: 1px solid black;
-    border-radius: 0.6rem;
-
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-  }
-  .card > .image {
-    width: 168px;
-    height: 170px;
-    margin-bottom: 0.8rem;
-
-    text-align: center;
-  }
-  .card > .image > img {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-
-  .card > .title {
-    font-size: 1.3rem;
-    font-weight: 550;
-    text-align: center;
-  }
-
-  .card > .category,
-  .card > .price,
-  .card > .rating {
-    font-size: 1rem;
-    font-weight: 550;
-  }
-
-  .card > .category,
-  .card > .price,
-  .card > .rating,
-  .card > .description {
-    text-align: center;
-  }
-
-  .card > .category > .itemCategory,
-  .card > .price > .itemPrice,
-  .card > .rating > .itemRating {
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-
-  .card > .buttons1 > button {
-    font-size: 0.9rem;
-    font-weight: 550;
-    padding: 0.5rem 0.7rem;
-    border: none;
-    outline: none;
-    border-radius: 0.5rem;
-
-    cursor: pointer;
-  }
-
-  .card > .buttons2 > button {
-    font-size: 1rem;
-    font-weight: 550;
-    padding: 0.5rem 0.7rem;
-    border: none;
-    outline: none;
-    border-radius: 0.5rem;
-
-    cursor: pointer;
-  }
-
-  .card > .buttons1 > .addToCart {
-    background-color: green;
-    color: #ffff;
-  }
-  .card > .buttons1 > .removeFromCart {
-    background-color: rgb(216, 18, 177);
-    color: #ffff;
-  }
-
-  .card > .buttons2 > .noOfItem {
-    background-color: #ffff;
-    padding: 0.5rem;
-  }
-
-*/
