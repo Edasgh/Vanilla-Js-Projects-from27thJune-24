@@ -11,6 +11,30 @@ const slider = document.querySelector(".slider");
 const sliderVal = document.querySelector(".filterVal");
 const sliderText = document.querySelector(".filterOption");
 
+//getting the select filter button, the cross icon and the right filters div
+const selectFilterBtn = document.querySelector(".select-filter-btn");
+const crossBtn = document.querySelector(".cross-icon");
+const rightFilters = document.querySelector(".right-filters");
+
+//
+selectFilterBtn.addEventListener("click", () => {
+  rightFilters.classList.toggle("display-f");
+});
+crossBtn.addEventListener("click", () => {
+  rightFilters.classList.toggle("display-f");
+});
+
+window.addEventListener("resize", () => {
+  if (this.document.body.clientWidth >= 649) {
+    rightFilters.classList.toggle("display-f");
+  }
+});
+window.addEventListener("reload", () => {
+  if (this.document.body.clientWidth >= 649) {
+    rightFilters.classList.toggle("display-f");
+  }
+});
+
 // getting the save image and reset button
 const saveImgBtn = document.querySelector("#saveImg"),
   resetImgBtn = document.querySelector("#reset");
@@ -51,6 +75,10 @@ filterOptions.forEach((option) => {
   option.onclick = function () {
     // only make slider enabled whenever any of the button get clicked
     slider.removeAttribute("disabled");
+    // if any of the buttons get clicked, make the display to none or hide the right-filters div
+    if (document.body.clientWidth <= 649) {
+      rightFilters.classList.toggle("display-f");
+    }
     switch (option.id) {
       case "Brightness":
         slider.max = 200;
@@ -238,6 +266,33 @@ filePicker.onchange = function () {
     });
     transformOptions.forEach((button) => {
       button.removeAttribute("disabled");
+      if (button.id == "horizontal") {
+        let prevBoxIcon = document.querySelector(".horizontal-span");
+        let boxIcon = document.createElement("span");
+        boxIcon.classList.add("horizontal-span");
+        boxIcon.innerHTML = ` <box-icon
+                name="reflect-vertical"
+                color="#000000"
+                style="width: 1.2rem"
+                class="box-icon-icon-horizontal"
+              ></box-icon>`;
+        button.appendChild(boxIcon);
+        button.removeChild(prevBoxIcon);
+      }
+      if (button.id == "vertical") {
+        let prevBoxIcon = document.querySelector(".vertical-span");
+        let boxIcon = document.createElement("span");
+        boxIcon.classList.add("vertical-span");
+        boxIcon.innerHTML = ` 
+              <box-icon
+                name="reflect-horizontal"
+                color="#000000"
+                style="width: 1.2rem"
+                class="box-icon-icon-vertical"
+              ></box-icon>`;
+        button.appendChild(boxIcon);
+        button.removeChild(prevBoxIcon);
+      }
     });
 
     saveImgBtn.removeAttribute("disabled");

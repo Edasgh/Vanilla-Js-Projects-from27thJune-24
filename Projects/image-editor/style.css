@@ -2,87 +2,328 @@
   font-family: sans-serif;
 }
 
+@media screen and (min-width: 320px) {
+  button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
+
+    cursor: pointer;
+  }
+  .navbar {
+    text-align: right;
+  }
+
+  .navbar > i,
+  .cross-icon {
+    padding: 0.4rem;
+    border: 1px solid black;
+    border-radius: 0.4rem;
+
+    margin-bottom: 0.6rem;
+  }
+
+  .cross-icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .cross-icon {
+    width: 15px;
+    height: 18px;
+  }
+
+  .container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "left left right"
+      "bottom bottom right";
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+  }
+
+  .left {
+    text-align: center;
+    grid-area: left;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .right {
+    position: absolute;
+    top: -43px;
+    left: -168px;
+
+    grid-area: right;
+
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: stretch;
+    background-color: #fff;
+    box-shadow: 1px 1px 4px grey, -1px -1px 4px grey;
+    padding: 0.4rem 2rem 2.4rem 2rem;
+  }
+
+  .display-f {
+    display: flex;
+  }
+
+  .bottom {
+    grid-area: bottom;
+  }
+
+  .bottom > .filter-infos > .slider {
+    width: 90%;
+  }
+  .bottom > .filter-infos {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  span {
+    font-size: 1.1rem;
+  }
+  .bottom > .buttons {
+    width: 90%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .bottom > .buttons > .controls {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+
+  .bottom > .buttons > .other-filters {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+
+  .bottom > .buttons > .other-filters > button {
+    font-size: 0.8rem;
+  }
+
+  #chosenImg {
+    width: 290px;
+    height: 350px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  #chosenImg {
+    width: 332px;
+    height: 350px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .right {
+    left: -160px;
+  }
+}
+@media screen and (min-width: 600px) {
+  .right {
+    left: -154px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .navbar > i,
+  .cross-icon,
+  .cross-icon-container {
+    display: none;
+  }
+
+  .right {
+    position: relative;
+    top: -106px;
+    left: 0;
+    grid-area: right;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: stretch;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0 0 0 1.4rem;
+  }
+
+  .bottom > .filter-infos > .slider {
+    width: 80%;
+  }
+  #chosenImg {
+    width: 382px;
+    height: 350px;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  button {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+
+    cursor: pointer;
+  }
+
+  .right {
+    position: relative;
+    top: 0;
+    left: 0;
+    grid-area: right;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-end;
+    align-items: stretch;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0 0 0 1.4rem;
+  }
+  .bottom {
+    grid-area: bottom;
+  }
+  .bottom > .buttons {
+    width: 90%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .bottom > .buttons > .controls {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
+  .bottom > .filter-infos > .slider {
+    width: 80%;
+  }
+  .bottom > .buttons > .other-filters > button {
+    font-size: 1.1rem;
+    gap: 20px;
+  }
+  #chosenImg {
+    width: 500px;
+    height: 350px;
+    margin: auto;
+  }
+}
+
+/*
+
 button {
-  font-size: 1.11rem;
+  font-size: .9rem;
   padding: 0.7rem 1.5rem;
 
   cursor: pointer;
 }
 
+
 .container {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: 1fr auto;
-  grid-template-areas:
-    "left left right"
-    "bottom bottom right";
-  width: 90vw;
-  height: 90vh;
-  margin: 0 auto;
-}
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "left left right"
+      "bottom bottom right";
+    width: 90vw;
+    height: 90vh;
+    margin: 0 auto;
+  }
 
-.left {
-  text-align: center;
-  grid-area: left;
-  width: 100%;
+  .left {
+    text-align: center;
+    grid-area: left;
+    width: 100%;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.right {
-  grid-area: right;
+  .right {
+    grid-area: right;
 
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: flex-end;
-  align-items: stretch;
-}
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
 
-.bottom {
-  grid-area: bottom;
-}
+  .bottom {
+    grid-area: bottom;
+  }
 
-.bottom > .filter-infos > .slider {
-  width: 80%;
-}
-.bottom > .filter-infos {
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-}
-span {
-  font-size: 1.1rem;
-}
-.bottom > .buttons {
-  width: 90%;
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-.bottom > .buttons > .controls {
-  display: flex;
-  flex-direction: row;
-  gap: 15px;
-  justify-content: flex-end;
-  align-items: stretch;
-}
+  .bottom > .filter-infos > .slider {
+    width: 80%;
+  }
+  .bottom > .filter-infos {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  span {
+    font-size: 1.1rem;
+  }
+  .bottom > .buttons {
+    width: 90%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction:row;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .bottom > .buttons > .controls {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: flex-end;
+    align-items: stretch;
+  }
 
-.bottom > .buttons > .other-filters {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  justify-content: flex-start;
-  align-items: stretch;
-}
+  .bottom > .buttons > .other-filters {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
 
-#chosenImg {
-  width: 500px;
-  height: 350px;
-  margin: auto;
-}
+  #chosenImg {
+    width: 500px;
+    height: 350px;
+    margin: auto;
+  }
+*/

@@ -10,7 +10,7 @@
     <title>Image Editor</title>
     <!-- Stylesheet -->
     <link rel="stylesheet" href="./style.css" />
-    <!-- Fontawsome & Boxicons -->
+    <!-- Fontawesome & Boxicons -->
     <script
       src="https://kit.fontawesome.com/846a5b7040.js"
       crossorigin="anonymous"
@@ -18,30 +18,47 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   </head>
   <body>
+    <nav class="navbar">
+      <i class="fa-solid fa-sliders select-filter-btn"></i>
+    </nav>
     <div class="container">
       <div class="left">
-          <img id="chosenImg"  src="./image-placeholder.svg" alt="" crossorigin="anonymous">
-         
+        <!-- The Choose image placeholder -->
+        <img
+          id="chosenImg"
+          src="./image-placeholder.svg"
+          alt=""
+          crossorigin="anonymous"
+        />
       </div>
-      <div class="right filters">
+      <div class="right filters right-filters">
+        <!-- Right container of all the buttons -->
+        <span class="cross-icon-container">
+          <p>&nbsp;</p>
+          <i class="fa-solid fa-xmark cross-icon"></i>
+        </span>
         <button id="Brightness">Brightness</button>
-        <button id="Contrast" >Contrast</button>
-        <button id="Saturation" >Saturation</button>
-        <button id="Inversion" >Inversion</button>
-        <button id="GrayScale" >GreyScale</button>
-        <button id="Sepia" >Sepia</button>
-        <button id="Hue-Rotate" >Hue-Rotate</button>
-        <button id="Blur" >Blur</button>
-       
-       
+        <button id="Contrast">Contrast</button>
+        <button id="Saturation">Saturation</button>
+        <button id="Inversion">Inversion</button>
+        <button id="GrayScale">GreyScale</button>
+        <button id="Sepia">Sepia</button>
+        <button id="Hue-Rotate">Hue-Rotate</button>
+        <button id="Blur">Blur</button>
       </div>
       <div class="bottom">
+        <!-- bottom part -->
         <div class="filter-infos">
-
-          <span class="filterOption"></span><input type="range" value="0" class="slider" />&nbsp;<span class="filterVal"></span>
+          <!-- Contains the filter being applied and the filter percentage -->
+          <span class="filterOption"></span
+          ><input type="range" value="0" class="slider" />&nbsp;<span
+            class="filterVal"
+          ></span>
         </div>
         <div class="buttons">
+          <!-- Contains all the buttons including filterButtons and controls -->
           <div class="other-filters transform-options">
+            <!-- Contains the other filters -->
             <button id="left">
               <i class="fa-solid fa-rotate-left"></i>
             </button>
@@ -49,14 +66,31 @@
               <i class="fa-solid fa-rotate-right"></i>
             </button>
             <button id="horizontal">
-              <box-icon name="reflect-vertical"></box-icon>
+              <span class="horizontal-span">
+                <box-icon
+                  name="reflect-vertical"
+                  color="#bab8b8"
+                  style="width: 1.2rem"
+                  class="box-icon-icon-horizontal"
+                ></box-icon>
+              </span>
+
+              <!-- #000000 : black -->
             </button>
             <button id="vertical">
-              <box-icon name="reflect-horizontal"></box-icon>
+              <span class="vertical-span">
+                <box-icon
+                  name="reflect-horizontal"
+                  color="#bab8b8"
+                  style="width: 1.2rem"
+                  class="box-icon-icon-vertical"
+                ></box-icon>
+              </span>
             </button>
           </div>
           <div class="controls">
-            <input type="file" class="file-picker" accept="image/*" hidden>
+            <!-- Contains all the control buttons -->
+            <input type="file" class="file-picker" accept="image/*" hidden />
             <button id="selectImg">Choose an Image</button>
             <button id="saveImg">Save Image</button>
             <button id="reset">Reset</button>
