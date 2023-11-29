@@ -2,14 +2,14 @@ const startBtn = document.getElementById("start-game");
 const scoreSpan = document.querySelector(".score-span");
 const squares = document.querySelectorAll(".grid div");
 
-const width = 10;
+const width = 25;
 let currentIndex = 0; // so first div in our grid
 let appleIndex = 0; // so first div in our grid
-let currentSnake = [2, 1, 0]; // length of the snake => 2 for the head, 0 for the tail nad 1 for the body from now on
+let currentSnake = [2, 1, 0]; // length of the snake => 2 for the head, 0 for the tail and 1 for the body from now on
 
 let direction = 1;
 let score = 0;
-let speed = 0.9;
+let speed = 0.99;
 let intervalTime = 0;
 let interval = 0;
 
