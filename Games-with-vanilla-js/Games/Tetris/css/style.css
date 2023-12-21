@@ -1,13 +1,38 @@
 div {
   background-color: yellow;
-  height: 20px;
   width: 20px;
+  height: 20px;
+  /* border: 0.01px solid black; */
+}
+
+.prev-grid {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.prev-shape {
+  height: 80px;
+  width: 80px;
 }
 
 .grid {
-  background-color: blue;
-  height: 400px;
   width: 200px;
+  height: 400px;
+
   display: flex;
   flex-wrap: wrap;
+}
+
+.block {
+  background-color: blue;
+}
+
+.block2 {
+  background-color: purple;
+}
+
+.block3 {
+  background-color: green;
 }
