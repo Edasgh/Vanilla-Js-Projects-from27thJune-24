@@ -1,0 +1,73 @@
+/* Quicksand  font */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+
+* {
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Styling the .container div, the paragraph elements ,the grid-board and its children divs and the button */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.texts {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.texts span {
+  background-color: #5cca77;
+  color: white;
+
+  padding: 0.7rem;
+  margin: 0.3rem;
+
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.turn-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.grid-board {
+  margin: 1.5rem auto;
+
+  width: 300px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.turn {
+  border: 1px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 6rem;
+
+  width: 100px;
+  height: 100px;
+
+  cursor: pointer;
+}
+
+button {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+
+  padding: 0.5rem;
+  margin: 0.5rem;
+
+  cursor: pointer;
+}
