@@ -1,28 +1,29 @@
-// getting the divs (children of the ".grid-board" div), the turn-showing / result showing text (paragraph element), the score-showing "p" element and the game-start button
-const grid_boxes = document.querySelectorAll(".grid-board div");
-const array_of_grid_boxes = Array.from(grid_boxes);
-const turn_text = document.querySelector(".turn-text");
-const score_text = document.querySelector(".score-text");
-const start_btn = document.querySelector(".start");
+// getting the divs (children of the ".grid-board" div)
+const grid_boxes = document.querySelectorAll(".grid-board div"),
+  array_of_grid_boxes = Array.from(grid_boxes);
+
+// the turn-showing / result showing text (paragraph element), the score-showing "p" element and the game-start button
+const turn_text = document.querySelector(".turn-text"),
+  score_text = document.querySelector(".score-text"),
+  start_btn = document.querySelector(".start");
 
 const values = ["X", "O"];
 //putting "X" and "O" values to an array to randomly get a value by using randomIndex( can be 0 or 1)
 
-let turns = 0;
-// set turns to 0 at first, when no one tapped any box and set turns to 9 or 9++ when all the boxes are filled=>game over
-
-let randomIndex = Math.floor(Math.random() * values.length);
-let prevTurnInfos = [];
+let turns = 0, // set turns to 0 at first, when no one tapped any box and set turns to 9 or 9++ when all the boxes are filled=>game over
+  randomIndex = Math.floor(Math.random() * values.length),
+  prevTurnInfos = [];
 
 let generatedVal = values[randomIndex]; // "X" or "O"
 turn_text.textContent = `Turn for "${generatedVal}"`;
 //initiating the currentTurn, xWins & oWins (if the xWins or oWins when turns<=9), xScores & oScores (the scores of "X" and "O" at that time), isAnyWin (if any user already won currently or not; returns boolean value)
-let currentTurn;
-let xWins;
-let xScores = 0;
-let oWins;
-let oScores = 0;
-let isAnyWin = xWins || oWins;
+let currentTurn,
+  xWins,
+  xScores = 0,
+  oWins,
+  oScores = 0,
+  isAnyWin = xWins || oWins;
+
 // initiating the score-text
 score_text.innerHTML = ` <span title="X's score : ${xScores}">"X" :<b> ${xScores} </b></span> and <span title="O's score: ${oScores}"> "O" : <b> ${oScores}</b></span>`;
 
