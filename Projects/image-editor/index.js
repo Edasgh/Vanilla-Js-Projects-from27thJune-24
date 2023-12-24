@@ -12,11 +12,12 @@ const sliderVal = document.querySelector(".filterVal");
 const sliderText = document.querySelector(".filterOption");
 
 //getting the select filter button, the cross icon and the right filters div
+// The select filter button and the cross-icon is only visible at smaller screen sizes (in mobiles specially)
 const selectFilterBtn = document.querySelector(".select-filter-btn");
 const crossBtn = document.querySelector(".cross-icon");
 const rightFilters = document.querySelector(".right-filters");
 
-//
+// for mobile-screens only
 selectFilterBtn.addEventListener("click", () => {
   rightFilters.classList.toggle("display-f");
 });
@@ -37,7 +38,7 @@ window.addEventListener("reload", () => {
 
 // getting the save image and reset button
 const saveImgBtn = document.querySelector("#saveImg"),
-  resetImgBtn = document.querySelector("#reset");
+  resetFiltersBtn = document.querySelector("#reset");
 
 // defining the default values of the filters
 let rotate = 0,
@@ -61,7 +62,7 @@ transformOptions.forEach((button) => {
   button.setAttribute("disabled", "true");
 });
 saveImgBtn.setAttribute("disabled", "true");
-resetImgBtn.setAttribute("disabled", "true");
+resetFiltersBtn.setAttribute("disabled", "true");
 
 // applying the default values of filters to the image
 function applyFilters() {
@@ -75,7 +76,7 @@ filterOptions.forEach((option) => {
   option.onclick = function () {
     // only make slider enabled whenever any of the button get clicked
     slider.removeAttribute("disabled");
-    // if any of the buttons get clicked, make the display to none or hide the right-filters div
+    // if any of the buttons get clicked, make the display to none or hide the right-filters div (in mobile screens)
     if (document.body.clientWidth <= 649) {
       rightFilters.classList.toggle("display-f");
     }
@@ -233,7 +234,7 @@ transformOptions.forEach((option) => {
 });
 
 // reset the filters and transform values to default , on clicking of the reset button
-resetImgBtn.onclick = function resetFilters() {
+resetFiltersBtn.onclick = function resetFilters() {
   rotate = 0;
   flipHorizontal = 1;
   flipVertical = 1;
@@ -257,7 +258,7 @@ filePicker.onchange = function () {
   } else {
     chosenImg.src = URL.createObjectURL(file);
     // reset the filters when new file is chosen
-    resetImgBtn.click();
+    resetFiltersBtn.click();
     // apply all the filters after chossing the image
     applyFilters();
     // enable all buttons after choosing the image except the choose image button
@@ -296,7 +297,7 @@ filePicker.onchange = function () {
     });
 
     saveImgBtn.removeAttribute("disabled");
-    resetImgBtn.removeAttribute("disabled");
+    resetFiltersBtn.removeAttribute("disabled");
     // chooseImageBtn.setAttribute("disabled", "true");
   }
 };
@@ -314,11 +315,16 @@ saveImgBtn.onclick = function saveImg() {
   canvas.height = chosenImg.naturalHeight;
   ctx.filter = `brightness(${brightness}%) contrast(${contrast}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%) sepia(${sepia}%) hue-rotate(${hueRotate}deg) blur(${Blur}px) `;
   ctx.translate(canvas.width / 2, canvas.height / 2);
+  //CanvasTransform.translate(x: number, y: number)
 
   if (rotate !== 0) {
     ctx.rotate((rotate * Math.PI) / 180);
+    //CanvasTransform.rotate(angle: number)
   }
+
   ctx.scale(flipHorizontal, flipVertical);
+  //CanvasTransform.scale(x: number, y: number)
+
   ctx.drawImage(
     chosenImg,
     -canvas.width / 2,
@@ -326,9 +332,24 @@ saveImgBtn.onclick = function saveImg() {
     canvas.width,
     canvas.height
   );
+  //.drawImage(imageSource, dx, dy, dWidth, dHeight)
 
+  // create a download link
   const link = document.createElement("a");
   link.download = "image.jpg";
   link.href = canvas.toDataURL();
-  link.click();
+  /*
+  
+link.href=string(the url of an element)
+
+
+  HTMLCanvasElement.toDataURL(type?: string | undefined, quality?: any): string
+Returns the content of the current canvas as an image that you can use as a source for another canvas or an HTML element.
+
+@param type
+The standard MIME type for the image format to return. If you do not specify this parameter, the default value is a PNG format image.
+  
+  */
+
+  link.click(); //download the image
 };
