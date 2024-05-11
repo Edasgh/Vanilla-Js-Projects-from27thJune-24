@@ -1,5 +1,5 @@
 # This is my first parallax website project (not-responsive yet )
- * Live Link :
+ * Live Link : https://parallax-scrolling-web.netlify.app/
 
  
 ## My Learnings From this Project :
