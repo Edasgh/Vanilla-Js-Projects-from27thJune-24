@@ -1,5 +1,5 @@
 # This is my first parallax website project (not-responsive yet )
- * Live Link : will be updated soon!
+ * Live Link :
 
  
 ## My Learnings From this Project :

@@ -1,9 +1,5 @@
 ## All vanilla js projects outside this repo listed here  
 [All repos are public]
- 
- # TSLOG : [private]
- Source code : https://github.com/Edasgh/TSLOG 
-[all the neccessary code files]
 
  # Drum-Kit :
   Source code : https://github.com/Edasgh/Drum-Kit
