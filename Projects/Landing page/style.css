@@ -1,66 +1,663 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url("./fonts.css");
+
+
+body {
+  position: relative;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #F0F4F5;
 }
-*{
+
+* {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
   font-style: normal;
 }
-li{
+
+li {
   list-style: none;
 }
-a{
+
+a,
+a:hover {
   color: inherit;
   text-decoration: none;
   font-size: inherit;
 }
 
-a:hover{
-  color: inherit;
-  text-decoration: none;
-
+.flex-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-@media screen and (min-width:320px)
-{
-  nav{
+.cyan-green-text {
+  color: #41D399;
+}
+
+@media screen and (min-width:320px) {
+  nav {
     display: flex;
     flex-direction: column;
-    justify-content: 
-    center;
+    justify-content:
+      center;
     align-items: center;
 
   }
+
   nav ul li a {
     font-size: .9rem;
 
   }
 
-  .leftSection{
+  .leftSection {
+    position: relative;
     padding: 1.15rem;
+
   }
 
-  .leftSection h1{
+  .leftSection h1 {
     font-size: 1.5rem;
     font-weight: bold;
   }
-  .leftSection p{
+
+  .leftSection p,
+  .hospitalDescription p {
     font-size: .8rem;
-   
+
   }
 
-  .leftSection .bottomAngle{
+
+  .leftSection .bottomAngle,
+  .leftSection .stethoscope,
+  .leftSection .mouse {
     position: absolute;
-    right: 1.1rem;
+
   }
-  .leftSection .stethoscope{
-    position: absolute;
-    right: 1.1rem;
+
+  .leftSection .bottomAngle {
+
+    top: 19rem;
+    right: 0.7rem;
   }
-  .leftSection .mouse{
+
+  .leftSection .stethoscope {
+
+    right: 0.1rem;
+    width: 19rem;
+    top: 3rem;
+  }
+
+  .leftSection .mouse {
+
+    right: 2.1rem;
+    bottom: 2rem;
+    width: 1.6rem;
+  }
+
+  .leftSection button {
+    cursor: pointer;
+    padding: .7rem 1rem;
+    margin: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: #0ec487;
+    color: #ffffff;
+    font-weight: 500;
+
+  }
+
+
+  .rightSection {
+    position: relative;
+    padding: 1.5rem;
+    margin-top: 5rem;
+  }
+
+  .rightSection .greenBox,
+  .rightSection .yelllowBox,
+  .rightSection .doctor {
     position: absolute;
-    right: 1.1rem;
+
+
+  }
+
+  .rightSection .greenBox {
+    width: 16rem;
+  }
+
+  .rightSection .yellowBox {
+    width: 18rem;
+  }
+
+  .rightSection .doctor {
+    width: 18rem;
+    top: -3rem;
+  }
+
+
+
+  .about-part,
+  .contact-part {
+    padding: 1rem 4rem;
+    margin: auto;
+  }
+
+  .achievement {
+    margin: 1.5rem 0;
+  }
+
+  .achievementCard {
+
+    border: 1px solid #696565;
+    border-radius: 1.2rem;
+    box-shadow: 1px 1px 6px #808080, -1px -1px 6px #808080;
+    padding: 1rem 2rem;
+    margin: .5rem;
+    width: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .contact-part {
+    width: 70vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1rem 0;
+  }
+
+
+  .contact-part form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    width: 15rem;
+    padding: 2rem 1.5rem;
+    border: 1px solid #808080;
+    border-radius: .8rem;
+    box-shadow: 1px 1px 7px #808080, -1px -1px 7px #808080;
+  }
+  .contact-part textarea {
+    height: 5rem;
+    resize: none;
+  }
+
+  .contact-part input[type="text"],
+  .contact-part textarea {
+    width: 13rem;
+    padding: .4rem .8rem;
+    border: none;
+    border-radius: .9rem;
+    outline: none;
+  }
+
+  .contact-part button {
+    cursor: pointer;
+    padding: .7rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: #0ec487;
+    color: #ffffff;
+
+    font-size: 1rem;
+  }
+
+
+
+}
+
+@media screen and (min-width:335px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    width: 36rem;
+    margin: .6rem 1.5rem .7rem .7rem;
+    padding-top: .5rem;
+    margin-top: 0rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  nav ul li a {
+    font-size: 1rem;
+
+  }
+
+
+
+  .leftSection {
+    width: 35rem;
+  }
+
+  .leftSection h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .leftSection p {
+    font-size: 1.1rem;
+
+  }
+
+  .leftSection .bottomAngle {
+
+    top: 22rem;
+
+  }
+
+  .leftSection .mouse {
+
+
+    bottom: 0rem;
+
+  }
+
+  .leftSection .stethoscope {
+    right: 6.1rem;
+    width: 23rem;
+    top: 0rem;
+    z-index: -4;
+  }
+
+  .rightSection .greenBox {
+    top: 0rem;
+    right: -1rem;
+    z-index: 2;
+    width: 20rem;
+  }
+
+  .rightSection .yellowBox {
+    position: absolute;
+    right: -5rem;
+    top: 2rem;
+    z-index: 0;
+    width: 22rem;
+  }
+
+  .rightSection .doctor {
+    right: 0rem;
+    z-index: 3;
+    width: 20rem;
+  }
+
+  .about-part {
+    display: flex;
+    flex-direction: column;
+    width: 98vw;
+  }
+
+  .hospitalDescription {
+    text-align: center;
+  }
+
+  .hospitalDescription p {
+    font-size: .99rem;
+  }
+
+  .achievementCard {
+    width: 6rem;
+  }
+
+  .contact-part {
+    width: 94vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 6rem 5rem;
+    
+  }
+
+
+}
+
+@media screen and (min-width:425px) {
+  .contact-part{
+    width: 98vw;
+    padding: 6rem 2rem;
+  }
+  
+}
+
+@media screen and (min-width:480px) {
+  .rightSection .greenBox {
+    top: 0rem;
+    left: 3rem;
+    z-index: 2;
+    width: 20rem;
+  }
+
+  .rightSection .yellowBox {
+    position: absolute;
+    left: 5rem;
+    top: 2rem;
+    z-index: 0;
+    width: 22rem;
+  }
+
+  .rightSection .doctor {
+    left: 4rem;
+    z-index: 3;
+    width: 20rem;
+  }
+
+  .achievementCard span {
+    font-size: 1.3rem;
+  }
+
+
+
+  .contact-part {
+    width: 94vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 6rem 8rem;
+    
+  }
+
+  .contact-part form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    width: 15rem;
+    padding: 2rem 1.5rem;
+    border: 1px solid #808080;
+    border-radius: .8rem;
+    box-shadow: 1px 1px 7px #808080, -1px -1px 7px #808080;
+  }
+
+  .contact-part textarea {
+    height: 5rem;
+    resize: none;
+  }
+
+  .contact-part input[type="text"],
+  .contact-part textarea {
+    width: 12rem;
+    padding: .4rem .8rem;
+    border: none;
+    border-radius: .9rem;
+    outline: none;
+  }
+
+  .contact-part button {
+    cursor: pointer;
+    padding: .7rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: #0ec487;
+    color: #ffffff;
+
+    font-size: 1.15rem;
+  }
+
+
+}
+
+@media screen and (min-width:700px) {
+  nav {
+    width: 98vw;
+    padding: inherit .6rem;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    z-index: 8;
+  }
+
+  .medifine-logo {
+    padding-left: 3rem;
+    width: 7.5rem;
+  }
+
+  .main-part {
+    width: auto;
+    height: 110vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    overflow: hidden;
+
+  }
+
+  .leftSection {
+    margin-top: 2.2rem;
+    width: 25rem;
+    padding: 0 4rem 3rem 4rem;
+  }
+
+  .rightSection {
+    width: 22.5rem;
+    margin-top: -11rem;
+    padding: 4rem;
+  }
+
+  .leftSection h1 {
+    font-size: 2.3rem;
+  }
+
+  .leftSection p {
+    margin-top: -.8rem;
+    font-size: .8rem;
+  }
+
+  .leftSection .bottomAngle {
+    top: 27rem;
+  }
+
+  .leftSection .stethoscope {
+    right: -2.9rem;
+    width: 20rem;
+    top: 12rem;
+  }
+
+
+  .rightSection .greenBox {
+    top: 0rem;
+    left: 2rem;
+    z-index: 2;
+    width: 19rem;
+  }
+
+  .rightSection .yellowBox {
+    position: absolute;
+    left: 4rem;
+    top: 2rem;
+    z-index: 0;
+    width: 19rem;
+  }
+
+  .rightSection .doctor {
+    left: 3rem;
+    z-index: 3;
+    width: 18rem;
+  }
+
+
+  .about-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+  }
+
+
+  .contact-part {
+    width: 94vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 6rem 8rem;
+    
+  }
+
+
+  .contact-part form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    width: 15rem;
+    padding: 2rem 1.5rem;
+    border: 1px solid #808080;
+    border-radius: .8rem;
+    box-shadow: 1px 1px 7px #808080, -1px -1px 7px #808080;
+  }
+
+  .contact-part textarea {
+    height: 5rem;
+    resize: none;
+  }
+
+  .contact-part input[type="text"],
+  .contact-part textarea {
+    width: 12rem;
+    padding: .4rem .8rem;
+    border: none;
+    border-radius: .9rem;
+    outline: none;
+  }
+
+  .contact-part button {
+    cursor: pointer;
+    padding: .7rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: #0ec487;
+    color: #ffffff;
+
+    font-size: 1.15rem;
+  }
+}
+
+
+@media screen and (min-width:950px) {
+  .medifine-logo {
+    padding-left: 9rem;
+    width: 11.5rem;
+  }
+
+  .leftSection {
+    padding-left: 10rem;
+  }
+
+  .leftSection h1 {
+    font-size: 2.8rem;
+    line-height: 3.6rem;
+    padding: 1rem;
+  }
+
+  .leftSection p {
+    font-size: 1rem;
+    padding: .5rem 1rem;
+  }
+
+  .leftSection .mouse {
+    bottom: 3rem;
+  }
+
+  .leftSection .stethoscope {
+    right: -8.9rem;
+    width: 37rem;
+    top: 0rem;
+  }
+
+  .leftSection button {
+    font-size: 1rem;
+    padding-left: 1.3rem;
+    padding-right: 1.3rem;
+    border-radius: 2rem;
+
+
+  }
+
+  .rightSection {
+    margin-top: -31rem;
+    padding-left: 8rem;
+  }
+
+  .rightSection .doctor {
+    width: 30rem;
+  }
+
+  .rightSection .greenBox {
+    width: 30rem;
+  }
+
+  .rightSection .yellowBox {
+    width: 30rem;
+  }
+
+
+  .about-part {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90vw;
+  }
+
+  .hospitalDescription h1 {
+    font-size: 3rem;
+  }
+
+  .hospitalDescription p {
+    text-align: center;
+    width: 35%;
+    margin: auto;
+  }
+
+  .achievementCard {
+    padding: .8rem 2rem;
+    width: 8rem;
+  }
+
+  .achievementCard span {
+    line-height: 1.2rem;
+  }
+
+  .achievementCard p {
+    font-size: 1.2rem;
+  }
+
+
+  .contact-part {
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 4rem 8rem;
+    
   }
 }

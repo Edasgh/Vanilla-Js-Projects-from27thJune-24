@@ -15,27 +15,28 @@
     />
 
     <!-- adding the css file -->
-    <link rel="stylesheet" href="./about.css" />
+    <link rel="stylesheet" href="../style.css" />
   </head>
 
   <body>
     <!-- creating the navigation menu -->
-    <nav>
-      <img src="../images/logo.png" alt="logo" />
-      <a href="/"></a>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about/about.html">About Us</a></li>
-        <li><a href="/contact/contact.html">Contact us</a></li>
-      </ul>
-    </nav>
+  <nav>
+    <a href="/">
+      <img src="../images/logo.png" class="medifine-logo" alt="logo" />
+    </a>
+    <ul list-style="none">
+      <li><a href="/" class="poppins-medium">Home</a></li>
+      <li><a href="./about.html" class="poppins-medium">About Us</a></li>
+      <li><a href="../contact/contact.html" class="poppins-medium">Contact us</a></li>
+    </ul>
+  </nav>
 
     <!-- creating the main section -->
-    <main>
+    <main class="main-part about-part">
       <!-- adding the hospital details -->
       <div class="hospitalDescription">
-        <h1>Best and Experienced Faculties</h1>
-        <p>
+        <h1 class="poppins-bold cyan-green-text">Best and Experienced Faculties</h1>
+        <p class="poppins-medium">
           We had bring the best experts of medical field to provide you the best
           service as possible. We are trying our best to serve the world with
           our facilities, so that everyone can have a proper medical facility to
@@ -44,20 +45,20 @@
       </div>
 
       <!-- adding the achievement cards -->
-      <div class="achievement">
+      <div class="achievement flex-wrap">
         <div class="achievementCard">
-          <span>20+</span>
-          <p>Doctors</p>
+          <span class="cyan-green-text poppins-bold">20+</span>
+          <p class="poppins-medium">Doctors</p>
         </div>
 
         <div class="achievementCard">
-          <span>50,000+</span>
-          <p>Customers</p>
+          <span class="cyan-green-text poppins-bold">50,000+</span>
+          <p class="poppins-medium">Customers</p>
         </div>
 
         <div class="achievementCard">
-          <span>500+</span>
-          <p>Students</p>
+          <span class="cyan-green-text poppins-bold">500+</span>
+          <p class="poppins-medium">Students</p>
         </div>
       </div>
     </main>
