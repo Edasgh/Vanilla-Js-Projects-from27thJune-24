@@ -51,7 +51,7 @@ const checkWin = (p1Name, p2Name, p1Moves, p2Moves) => {
       return combination.every((el) => p2Moves.includes(`box-${el + 1}`));
     }
   };
-  p1Wins = winning_combinations.some(IncludesinP1);
+  p1Wins = winning_combinations.some(IncludesinP1); //any combination from the array
   p2Wins = winning_combinations.some(IncludesinP2);
 
   if (p1Wins) {
