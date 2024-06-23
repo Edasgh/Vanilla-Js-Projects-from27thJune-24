@@ -68,6 +68,22 @@ const checkWin = (p1Name, p2Name, p1Moves, p2Moves) => {
       document.getElementById("whosTurn").innerText = `${oppName} Wins`;
     }
   }
+
+  if (p1Wins || p2Wins) {
+    let time = 0;
+    const interval = setInterval(() => {
+      time++;
+      document.getElementById("whosTurn").innerText = `Redirecting You In ${
+        3 - time
+      } second(s)`;
+    }, 1000);
+
+    setTimeout(() => {
+      socket.emit("gameOver", { name: userName });
+      clearInterval(interval);
+      window.location.reload();
+    }, 3000);
+  }
 };
 
 joinGameForm.addEventListener("submit", (e) => {
@@ -102,17 +118,21 @@ socket.on("find", (e) => {
   user.innerText = `${userName}`;
   opp.innerText = `${oppName}`;
 
-  document.getElementById(
-    "whosTurn"
-  ).innerText = `${foundObj.p1.p1Turn}'s Turn`;
+  whosTurnNow = foundObj.p1.p1Turn;
+  document.getElementById("whosTurn").innerText = `${whosTurnNow}'s Turn`;
   turnText.innerText = `${yourTurn}`;
 });
 
 grid_boxes.forEach((box) => {
   box.addEventListener("click", () => {
-    box.innerText = yourTurn;
-
-    socket.emit("playing", { value: yourTurn, id: box.id, name: userName });
+    if (yourTurn === whosTurnNow) {
+      box.style.cursor = "pointer";
+      box.innerText = yourTurn;
+      socket.emit("playing", { value: yourTurn, id: box.id, name: userName });
+    } else {
+      box.style.cursor = "not-allowed";
+      return;
+    }
   });
 });
 
@@ -128,13 +148,30 @@ socket.on("playing", (e) => {
   let p2Moves = foundObj.p2.p2Moves;
 
   if (foundObj.choiceCount % 2 != 0) {
-    document.getElementById(
-      "whosTurn"
-    ).innerText = `${foundObj.p2.p2Turn}'s Turn`;
+    whosTurnNow = foundObj.p2.p2Turn;
+    document.getElementById("whosTurn").innerText = `${whosTurnNow}'s Turn`;
   } else {
-    document.getElementById(
-      "whosTurn"
-    ).innerText = `${foundObj.p1.p1Turn}'s Turn`;
+    whosTurnNow = foundObj.p1.p1Turn;
+    document.getElementById("whosTurn").innerText = `${whosTurnNow}'s Turn`;
+  }
+
+  if (foundObj.choiceCount >= 9) {
+    if (!p1Wins && !p2Wins) {
+      document.getElementById("whosTurn").innerText = `Match Draw!`;
+
+      let time = 0;
+      const interval = setInterval(() => {
+        time++;
+        document.getElementById("whosTurn").innerText = `Redirecting You In ${
+          3 - time
+        } second(s)`;
+      }, 1000);
+      setTimeout(() => {
+        socket.emit("gameOver", { name: userName });
+        clearInterval(interval);
+        window.location.reload();
+      }, 3000);
+    }
   }
 
   if (foundObj.choiceCount <= 9) {

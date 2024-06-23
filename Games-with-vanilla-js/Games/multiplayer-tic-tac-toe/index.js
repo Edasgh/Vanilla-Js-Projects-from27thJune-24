@@ -93,6 +93,10 @@ io.on("connection", (socket) => {
 
     io.emit("playing", { allPlayers: playingArr });
   });
+
+  socket.on("gameOver", (e) => {
+    playingArr = playingArr.filter((obj) => obj.p1.p1Name !== e.name);
+  });
 });
 
 app.get("/", (req, res) => {
