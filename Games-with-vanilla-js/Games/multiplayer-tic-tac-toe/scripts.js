@@ -73,9 +73,9 @@ const checkWin = (p1Name, p2Name, p1Moves, p2Moves) => {
     let time = 0;
     const interval = setInterval(() => {
       time++;
-      document.getElementById("whosTurn").innerText = `Redirecting You In ${
-        3 - time
-      } second(s)`;
+      document.getElementById(
+        "whosTurn"
+      ).innerText = `Redirecting to Home Page In ${3 - time} second(s)`;
     }, 1000);
 
     setTimeout(() => {
@@ -124,6 +124,13 @@ socket.on("find", (e) => {
 });
 
 grid_boxes.forEach((box) => {
+  box.addEventListener("mouseover", () => {
+    if (yourTurn === whosTurnNow) {
+      box.style.cursor = "pointer";
+    } else {
+      box.style.cursor = "not-allowed";
+    }
+  });
   box.addEventListener("click", () => {
     if (yourTurn === whosTurnNow) {
       box.style.cursor = "pointer";
@@ -162,9 +169,9 @@ socket.on("playing", (e) => {
       let time = 0;
       const interval = setInterval(() => {
         time++;
-        document.getElementById("whosTurn").innerText = `Redirecting You In ${
-          3 - time
-        } second(s)`;
+        document.getElementById(
+          "whosTurn"
+        ).innerText = `Redirecting To Home Page In ${3 - time} second(s)`;
       }, 1000);
       setTimeout(() => {
         socket.emit("gameOver", { name: userName });
