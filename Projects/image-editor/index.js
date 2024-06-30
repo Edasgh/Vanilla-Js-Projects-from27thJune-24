@@ -298,7 +298,6 @@ filePicker.onchange = function () {
 
     saveImgBtn.removeAttribute("disabled");
     resetFiltersBtn.removeAttribute("disabled");
-    // chooseImageBtn.setAttribute("disabled", "true");
   }
 };
 
