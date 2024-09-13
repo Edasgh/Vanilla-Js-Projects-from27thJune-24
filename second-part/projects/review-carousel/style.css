@@ -41,7 +41,6 @@ main {
   transition: all 1s ease;
 }
 
-
 /* Styling all the review cards */
 .review-card {
   position: relative;
@@ -58,7 +57,6 @@ main {
   align-items: center;
 }
 
-
 /* Styling the comment icon in card */
 .review-card > .chat-1 {
   position: absolute;
@@ -67,7 +65,6 @@ main {
   font-size: 2.11rem;
   color: #125b70;
 }
-
 
 .review-card > .name,
 .review-card > .profession {
