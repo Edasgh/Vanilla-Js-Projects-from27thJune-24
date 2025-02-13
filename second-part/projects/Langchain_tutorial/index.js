@@ -175,10 +175,10 @@ const agentBuilder = new StateGraph(MessagesAnnotation)
 
 // Running the agent
 const result = await agentBuilder.invoke({
-  messages: [new HumanMessage("Add 3 and 4")],
+  messages: [new HumanMessage("Add 3 and 4 and multiply 10 to it")],
 });
 
 
 
-console.log("AI : ",result.messages[result.messages.length-1].content);
+console.log("AI : ",result.messages[result.messages.length-2].content);
 
