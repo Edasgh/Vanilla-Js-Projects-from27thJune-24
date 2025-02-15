@@ -94,3 +94,6 @@ copyBtn.onclick=function(){
   alert("Paragraphs copied!")
 }
 
+generateParagraphs(5);
+
+
